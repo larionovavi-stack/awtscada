@@ -249,27 +249,27 @@ kbd {
 <nav class="sidebar" id="sidebar">
   <a href="../" class="sidebar-logo"><span>BitSCADA</span>&nbsp;Docs</a>
 
-  <div class="sidebar-label">Start operation</div>
-  <a href="#overview">Overview system</a>
-  <a href="#requirements">System requirements</a>
+  <div class="sidebar-label">Getting Started</div>
+  <a href="#overview">System Overview</a>
+  <a href="#requirements">System Requirements</a>
   <a href="#install">Installation</a>
   <a href="#quickstart">Quick Start</a>
 
   <div class="sidebar-label">Editor</div>
-  <a href="#editor">Graphic Editor</a>
+  <a href="#editor">Graphical Editor</a>
   <a href="#blocks">Function Blocks</a>
   <a href="#shapes">Graphic Elements</a>
-  <a href="#wires">Connections (wires)</a>
-  <a href="#pages">Multi-page</a>
-  <a href="#popups">Popup</a>
+  <a href="#wires">Connections (Wires)</a>
+  <a href="#pages">Multi-Page Projects</a>
+  <a href="#popups">Popups</a>
 
   <div class="sidebar-label">Runtime</div>
   <a href="#runtime">Runtime Environment</a>
-  <a href="#trends">Trends and archive</a>
-  <a href="#alarms">Sound Alerts</a>
+  <a href="#trends">Trends &amp; Historian</a>
+  <a href="#alarms">Alarm Notifications</a>
 
   <div class="sidebar-label">Protocols</div>
-  <a href="#protocols">Overview protocolin</a>
+  <a href="#protocols">Protocol Overview</a>
   <a href="#iec61850">IEC 61850 (MMS/GOOSE/SV)</a>
   <a href="#opcua">OPC UA</a>
   <a href="#modbus">Modbus TCP</a>
@@ -279,17 +279,17 @@ kbd {
   <a href="#gateway">SCADA Gateway</a>
   <a href="#dashboard">Dashboard</a>
   <a href="#database">Database</a>
-  <a href="#users">Users and roles</a>
+  <a href="#users">Users &amp; Roles</a>
   <a href="#api">REST API</a>
 
-  <div class="sidebar-label">Operation</div>
-  <a href="#projects">Project (saving)</a>
+  <div class="sidebar-label">Operations</div>
+  <a href="#projects">Projects (Save/Load)</a>
   <a href="#settings">Settings</a>
-  <a href="#real-hw">Real equipmentand</a>
-  <a href="#backup">Reserve andinand</a>
+  <a href="#real-hw">Real Hardware</a>
+  <a href="#backup">Backup</a>
   <a href="#troubleshoot">Troubleshooting</a>
 
-  <div class="sidebar-label">Additionally</div>
+  <div class="sidebar-label">Additional</div>
   <a href="#security">Security</a>
   <a href="#license">Licensing</a>
   <a href="#contacts">Contacts</a>
@@ -306,66 +306,66 @@ kbd {
 <div class="main">
 
 <h1>BitSCADA IEC 61850 v8</h1>
-<p class="subtitle">Full guid user</p>
+<p class="subtitle">Complete User Manual</p>
 
 <div class="grid-3">
-  <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">. block</div></div>
-  <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">aboutin</div></div>
-  <div class="stat-card"><div class="stat-num">65</div><div class="stat-label">Graph. elementin</div></div>
+  <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">Function Blocks</div></div>
+  <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Protocols</div></div>
+  <div class="stat-card"><div class="stat-num">65</div><div class="stat-label">Graphic Elements</div></div>
 </div>
 
-<a href="../BitSCADA_Demo.zip" class="download-btn" download>&#11015; Download demo-version (20 )</a>
+<a href="../BitSCADA_Demo.zip" class="download-btn" download>&#11015; Download Demo (20 MB)</a>
 
 <!-- =================== OVERVIEW =================== -->
-<h2 id="overview">Overview system</h2>
+<h2 id="overview">System Overview</h2>
 
-<p><strong>BitSCADA</strong>— on SCADA-system industrial in for dispatchwith controland and with . Process visualization, with with in, controland andwithfullandand andand, archiving and alertand.</p>
+<p><strong>BitSCADA</strong> is a browser-based industrial-grade SCADA system for supervisory control and data acquisition. It provides process visualization, data collection from controllers, actuator control, historian archiving, and alarm management.</p>
 
 <div class="card">
-  <div class="card-title">Delivery contents</div>
+  <div class="card-title">Package Contents</div>
   <table>
-    <tr><th>File</th><th>Size</th><th>Assignment</th></tr>
-    <tr><td><code>SCADA_IEC61850_v8.html</code></td><td>~240</td><td>Clientwith with (SCADA)</td></tr>
-    <tr><td><code>SCADA_Gateway.exe</code></td><td>~25</td><td>Serveron with (Gateway + Emulator)</td></tr>
+    <tr><th>File</th><th>Size</th><th>Description</th></tr>
+    <tr><td><code>SCADA_IEC61850_v8.html</code></td><td>~240 KB</td><td>Client-side application (SCADA)</td></tr>
+    <tr><td><code>SCADA_Gateway.exe</code></td><td>~25 MB</td><td>Server-side application (Gateway + Emulator)</td></tr>
   </table>
-  <p style="margin:0;font-size:13px;color:var(--text-dim)">Installation additional not required. Connection andnot not required.</p>
+  <p style="margin:0;font-size:13px;color:var(--text-dim)">No additional software installation required. No internet connection required.</p>
 </div>
 
 <div class="callout callout-success">
   <div class="callout-icon">&#9889;</div>
-  <div><strong>99% withwithin code.</strong>External dependencies &mdash; only React 18 and Babel (with with CDN). Offline-build fullwith intoneon.</div>
+  <div><strong>99% proprietary code.</strong> External dependencies &mdash; only React 18 and Babel (loaded from CDN). The offline build is fully self-contained.</div>
 </div>
 
 <!-- =================== REQUIREMENTS =================== -->
-<h2 id="requirements">System requirements</h2>
+<h2 id="requirements">System Requirements</h2>
 
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Minimum <span class="tag tag-orange">MIN</span></div>
     <ul style="margin:0">
-      <li>Processor: x86-64, 2 cores</li>
-      <li>Memory: 2</li>
-      <li>Disk: 50</li>
-      <li>Browser: Chrome/Firefox/Edge</li>
+      <li>CPU: x86-64, 2 cores</li>
+      <li>RAM: 2 GB</li>
+      <li>Disk: 50 MB</li>
+      <li>Browser: Chrome / Firefox / Edge</li>
     </ul>
   </div>
   <div class="card">
     <div class="card-title">Recommended <span class="tag tag-green">REC</span></div>
     <ul style="margin:0">
-      <li>Processor: x86-64, 4 cores</li>
-      <li>Memory: 4</li>
-      <li>Disk: 500 (with on 30 not)</li>
-      <li>Chrome inwithandand</li>
+      <li>CPU: x86-64, 4 cores</li>
+      <li>RAM: 4 GB</li>
+      <li>Disk: 500 MB (with 30-day historian DB)</li>
+      <li>Latest version of Chrome</li>
     </ul>
   </div>
 </div>
 
 <table>
   <tr><th>Component</th><th>Requirement</th></tr>
-  <tr><td></td><td>Windows 7/10/11, Linux, macOS</td></tr>
+  <tr><td>OS</td><td>Windows 7/10/11, Linux, macOS</td></tr>
   <tr><td>Browser</td><td>Chrome 90+, Firefox 90+, Edge 90+</td></tr>
-  <tr><td>Python (only for .py)</td><td>3.11</td></tr>
-  <tr><td>Python (for .exe)</td><td>Not required</td></tr>
+  <tr><td>Python (.py build only)</td><td>3.11</td></tr>
+  <tr><td>Python (.exe build)</td><td>Not required</td></tr>
   <tr><td>Network</td><td>Not required (localhost)</td></tr>
 </table>
 
@@ -374,70 +374,74 @@ kbd {
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>Installation not required. Copy two files to any folder.</div>
+  <div>No installation required. Copy both files to any folder.</div>
 </div>
 
 <div class="steps">
   <div class="step">
-    Download <a href="../BitSCADA_Demo.zip">BitSCADA_Demo.zip</a>and with in folder, onat<code>C:\BitSCADA\</code>
+    Download <a href="../BitSCADA_Demo.zip">BitSCADA_Demo.zip</a> and extract it to any folder, e.g. <code>C:\BitSCADA\</code>
   </div>
   <div class="step">
-    The folder must contain: <code>SCADA_IEC61850_v8.html</code> (or offline-version), <code>SCADA_Gateway.exe</code>and demowithand<code>.json</code>
+    The folder must contain: <code>SCADA_IEC61850_v8.html</code> (or offline build), <code>SCADA_Gateway.exe</code>, and a demo project <code>.json</code> file
   </div>
-  <div class="step">Installation finishon. Rights andandwith not with.</div>
+  <div class="step">
+    Installation complete. Administrator privileges are not required.
+  </div>
 </div>
 
-<h3>Auto-load Gateway (recommended)</h3>
-<p>For inandwith launch Gateway at enablandand :</p>
-<pre><code><span class="comment"># Open folder inloadand</span>
+<h3>Gateway Auto-Start (Recommended)</h3>
+<p>To automatically start the Gateway when the computer boots:</p>
+<pre><code><span class="comment"># Open the startup folder</span>
 Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
-<span class="comment"># Insert shortcut SCADA_Gateway.exe</span></code></pre>
+<span class="comment"># Place a shortcut to SCADA_Gateway.exe here</span></code></pre>
 
 <!-- =================== QUICKSTART =================== -->
 <h2 id="quickstart">Quick Start</h2>
 
 <div class="steps">
   <div class="step">
-    <strong>Run Gateway</strong> &mdash; double click on <code>SCADA_Gateway.exe</code>. Wait for messages <code>All servers running!</code>in console. Window not in.</div>
-  <div class="step">
-    <strong>Open SCADA</strong> &mdash; double click on <code>SCADA_IEC61850_v8.html</code>. Browser will open automatically.
+    <strong>Launch the Gateway</strong> &mdash; double-click <code>SCADA_Gateway.exe</code>. Wait for the <code>All servers running!</code> message in the console. Do not close the window.
   </div>
   <div class="step">
-    <strong>Check connectand</strong>&mdash; in header on on point<strong>GW</strong>. In console Gateway: <code>Config received from SCADA</code>.
+    <strong>Open SCADA</strong> &mdash; double-click <code>SCADA_IEC61850_v8.html</code>. The browser will open automatically.
   </div>
   <div class="step">
-    <strong>Run Runtime</strong>&mdash; click button<strong>Runtime</strong>in header. Instruments changandwith valueand emulator.</div>
+    <strong>Verify the connection</strong> &mdash; the header bar should show a green <strong>GW</strong> indicator. In the Gateway console: <code>Config received from SCADA</code>.
+  </div>
+  <div class="step">
+    <strong>Start Runtime</strong> &mdash; click the <strong>Runtime</strong> button in the header. Instruments will display live values from the emulator.
+  </div>
 </div>
 
 <div class="callout callout-success">
   <div class="callout-icon">&#9989;</div>
-  <div>If at in &mdash; system operation! Dashboard Gateway access on<code>http://localhost:8088</code></div>
+  <div>If instruments are displaying data &mdash; the system is operational! The Gateway Dashboard is available at <code>http://localhost:8088</code></div>
 </div>
 
 <!-- =================== EDITOR =================== -->
-<h2 id="editor">Graphic Editor</h2>
+<h2 id="editor">Graphical Editor</h2>
 
-<p>Editor opens by default. Here withwith SCADA:</p>
+<p>The editor opens by default. SCADA projects are created here:</p>
 
 <div class="card">
-  <div class="card-title">Main operatioand</div>
+  <div class="card-title">Basic Operations</div>
   <table>
-    <tr><th>Action</th><th>How</th></tr>
-    <tr><td>Add block/shape</td><td>Drag from palette on left</td></tr>
-    <tr><td>Select</td><td>Click element</td></tr>
-    <tr><td>Multiple inand</td><td><kbd>Ctrl</kbd> + click</td></tr>
-    <tr><td>Connect wire</td><td>Click on output port &rarr; click on input</td></tr>
-    <tr><td>Scale</td><td>Wheel mouse (0.2x &ndash; 3x)</td></tr>
-    <tr><td>Panorama</td><td>Average button mouse or<kbd>Shift</kbd> + LMB</td></tr>
+    <tr><th>Action</th><th>How To</th></tr>
+    <tr><td>Add block / shape</td><td>Drag from the palette on the left</td></tr>
+    <tr><td>Select</td><td>Click on element</td></tr>
+    <tr><td>Multi-select</td><td><kbd>Ctrl</kbd> + click</td></tr>
+    <tr><td>Connect wire</td><td>Click output port &rarr; click input port</td></tr>
+    <tr><td>Zoom</td><td>Mouse wheel (0.2x &ndash; 3x)</td></tr>
+    <tr><td>Pan</td><td>Middle mouse button or <kbd>Shift</kbd> + LMB</td></tr>
     <tr><td>Delete</td><td><kbd>Delete</kbd></td></tr>
     <tr><td>Save</td><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td></tr>
-    <tr><td>Auto-layout</td><td>Button &#9889; in header</td></tr>
-    <tr><td>Context menu</td><td>Right click: delete, andin, layer</td></tr>
+    <tr><td>Auto-layout</td><td>&#9889; button in the header</td></tr>
+    <tr><td>Context menu</td><td>Right-click: delete, duplicate, layer</td></tr>
   </table>
 </div>
 
-<p><strong>Panel properties</strong>(right, 280px) &mdash; settingand in block: and, parameters, atinand.</p>
-<p><strong>Debug-panel</strong>(bottom, 56px) &mdash; log event. Hidden in Runtime.</p>
+<p><strong>Properties panel</strong> (right side, 280px) &mdash; settings for the selected block: name, parameters, bindings.</p>
+<p><strong>Debug panel</strong> (bottom, 56px) &mdash; event log. Hidden in Runtime mode.</p>
 
 <!-- =================== BLOCKS =================== -->
 <h2 id="blocks">Function Blocks (53)</h2>
@@ -445,79 +449,79 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <h3>Inputs (12)</h3>
 <table>
   <tr><th>Block</th><th>Outputs</th><th>Description</th></tr>
-  <tr><td>Analog input</td><td>v</td><td>Emulation analog signal (sine)</td></tr>
-  <tr><td>Discrete input</td><td>v</td><td>Discrete signal 0/1</td></tr>
-  <tr><td>Constant</td><td>v</td><td>Constant valueand</td></tr>
-  <tr><td>Generator</td><td>v</td><td>Sine, directlyangleand, sawtooth, angleand, ramp, random</td></tr>
-  <tr><td>OPC UA Read</td><td>v, q</td><td>Read variables IEC 62541</td></tr>
-  <tr><td>Modbus Read</td><td>v, ok</td><td>Read registerin Modbus TCP (FC 3/4)</td></tr>
-  <tr><td>MMS Read</td><td>v, q</td><td>Read variables IEC 61850-8-1</td></tr>
-  <tr><td>GOOSE Sub</td><td>v, st</td><td>Subscription GOOSE IEC 61850-8-1</td></tr>
-  <tr><td>SV Sub</td><td>ia, ib, ic</td><td>Sampled Values IEC 61850-9-2 (3 phases)</td></tr>
+  <tr><td>Analog Input</td><td>v</td><td>Analog signal emulation (sine wave)</td></tr>
+  <tr><td>Discrete Input</td><td>v</td><td>Discrete signal 0/1</td></tr>
+  <tr><td>Constant</td><td>v</td><td>Fixed constant value</td></tr>
+  <tr><td>Generator</td><td>v</td><td>Sine, square, sawtooth, triangle, ramp, random</td></tr>
+  <tr><td>OPC UA Read</td><td>v, q</td><td>Read IEC 62541 variables</td></tr>
+  <tr><td>Modbus Read</td><td>v, ok</td><td>Read Modbus TCP registers (FC 3/4)</td></tr>
+  <tr><td>MMS Read</td><td>v, q</td><td>Read IEC 61850-8-1 variables</td></tr>
+  <tr><td>GOOSE Sub</td><td>v, st</td><td>GOOSE IEC 61850-8-1 subscription</td></tr>
+  <tr><td>SV Sub</td><td>ia, ib, ic</td><td>Sampled Values IEC 61850-9-2 (3-phase)</td></tr>
   <tr><td>OPC DA Read</td><td>v, q</td><td>Read via OpenOPC/DCOM</td></tr>
   <tr><td>InTouch Read</td><td>v, q</td><td>Read Wonderware InTouch</td></tr>
   <tr><td>WinCC Read</td><td>v, q</td><td>Read Siemens WinCC</td></tr>
 </table>
 
-<h3>Logand (9)</h3>
+<h3>Logic (9)</h3>
 <table>
   <tr><th>Block</th><th>Inputs &rarr; Outputs</th><th>Description</th></tr>
-  <tr><td>AND</td><td>a, b &rarr; q</td><td>Logandwith</td></tr>
-  <tr><td>OR</td><td>a, b &rarr; q</td><td>Logandwith OR</td></tr>
-  <tr><td>NOT</td><td>a &rarr; q</td><td>Logandwith</td></tr>
+  <tr><td>AND</td><td>a, b &rarr; q</td><td>Logical AND</td></tr>
+  <tr><td>OR</td><td>a, b &rarr; q</td><td>Logical OR</td></tr>
+  <tr><td>NOT</td><td>a &rarr; q</td><td>Logical NOT</td></tr>
   <tr><td>XOR</td><td>a, b &rarr; q</td><td>Exclusive OR</td></tr>
-  <tr><td>Comparator</td><td>a, b &rarr; gt, eq, lt</td><td>Comparison: more, equal, less</td></tr>
-  <tr><td>TON</td><td>en &rarr; q, et</td><td>Timer delayand enabland</td></tr>
-  <tr><td>Counter</td><td>pu, rst &rarr; cv, q</td><td>Counter andwithin with with</td></tr>
+  <tr><td>Comparator</td><td>a, b &rarr; gt, eq, lt</td><td>Comparison: greater than, equal, less than</td></tr>
+  <tr><td>TON</td><td>en &rarr; q, et</td><td>On-delay timer</td></tr>
+  <tr><td>Counter</td><td>pu, rst &rarr; cv, q</td><td>Pulse counter with preset</td></tr>
   <tr><td>MUX</td><td>a, b, sel &rarr; q</td><td>Multiplexer</td></tr>
-  <tr><td>SR</td><td>s, r &rarr; q</td><td>SR-trigger</td></tr>
+  <tr><td>SR</td><td>s, r &rarr; q</td><td>SR flip-flop</td></tr>
 </table>
 
-<h3>Calculations (7)</h3>
+<h3>Computation (7)</h3>
 <table>
   <tr><th>Block</th><th>Inputs &rarr; Outputs</th><th>Description</th></tr>
-  <tr><td>Math. operatio</td><td>a, b &rarr; r</td><td>+, &minus;, &times;, &divide;, pow, min, max</td></tr>
-  <tr><td>Scale</td><td>v &rarr; r</td><td>Linear scalandinand andon</td></tr>
-  <tr><td>PID-regulator</td><td>pv, sp &rarr; out, err</td><td>PID with Kp and andand output</td></tr>
-  <tr><td>Formula</td><td>x, y &rarr; r</td><td>Custom formula (sin, cos, sqrt, PI)</td></tr>
-  <tr><td>Filter</td><td>v &rarr; r</td><td>Exponential LPF</td></tr>
-  <tr><td>RMS</td><td>v &rarr; r</td><td>RMS valueand</td></tr>
-  <tr><td>Limiter</td><td>v &rarr; r</td><td>Range limiting lo/hi</td></tr>
+  <tr><td>Math Operation</td><td>a, b &rarr; r</td><td>+, &minus;, &times;, &divide;, pow, min, max</td></tr>
+  <tr><td>Scale</td><td>v &rarr; r</td><td>Linear range scaling</td></tr>
+  <tr><td>PID Controller</td><td>pv, sp &rarr; out, err</td><td>PID with Kp and output limiting</td></tr>
+  <tr><td>Formula</td><td>x, y &rarr; r</td><td>Arbitrary expression (sin, cos, sqrt, PI)</td></tr>
+  <tr><td>Filter</td><td>v &rarr; r</td><td>Exponential low-pass filter</td></tr>
+  <tr><td>RMS</td><td>v &rarr; r</td><td>Root Mean Square value</td></tr>
+  <tr><td>Limiter</td><td>v &rarr; r</td><td>Range clamp lo/hi</td></tr>
 </table>
 
 <h3>Programs (5)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Script</td><td>Custom JavaScript (i1, i2 &rarr; o1, o2)</td></tr>
-  <tr><td>SQL Write</td><td>Write valueand in log SQLite</td></tr>
-  <tr><td>SQL Read</td><td>Read afternot valueand and in</td></tr>
-  <tr><td>Write in DB</td><td>Auto-classification: &gt;80=inand, &gt;60=warning</td></tr>
-  <tr><td>Auto-print</td><td>Automatic Report Printing</td></tr>
+  <tr><td>Script</td><td>Arbitrary JavaScript (i1, i2 &rarr; o1, o2)</td></tr>
+  <tr><td>SQL Write</td><td>Write value to SQLite log</td></tr>
+  <tr><td>SQL Read</td><td>Read latest value from historian trends</td></tr>
+  <tr><td>DB Write</td><td>Auto-classification: &gt;80 = alarm, &gt;60 = warning</td></tr>
+  <tr><td>Auto-Print</td><td>Automatic report printing</td></tr>
 </table>
 
 <h3>Outputs (10)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Analog / Discrete output</td><td>Simple output</td></tr>
-  <tr><td>OPC UA / Modbus / MMS Write</td><td>Write protocol</td></tr>
-  <tr><td>GOOSE Pub</td><td>Publishing GOOSE-event (d1, d2)</td></tr>
+  <tr><td>Analog / Discrete Output</td><td>Simple output</td></tr>
+  <tr><td>OPC UA / Modbus / MMS Write</td><td>Protocol write operation</td></tr>
+  <tr><td>GOOSE Pub</td><td>Publish GOOSE event (d1, d2)</td></tr>
   <tr><td>OPC DA / InTouch / WinCC Write</td><td>Write via OPC DA</td></tr>
-  <tr><td>Sound alertand</td><td>WebAudio: alarm/warn/info/siren + within URL</td></tr>
+  <tr><td>Alarm Sound</td><td>WebAudio: alarm/warn/info/siren + custom URL</td></tr>
 </table>
 
-<h3>Displays (10 &mdash; inand in Runtime)</h3>
+<h3>Displays (10 &mdash; visible in Runtime)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Analog Gauge</td><td>SVG 270&deg; arc, in-color</td></tr>
-  <tr><td>Numeric indicator</td><td>Digital valueand with andandand</td></tr>
-  <tr><td>Bar Chart</td><td>Vertical bar with fill</td></tr>
-  <tr><td>Indicator</td><td>Circle, on/off</td></tr>
-  <tr><td>Trend</td><td>3 channel, cursor, archive, PNG, print</td></tr>
-  <tr><td>Slider</td><td>Slider controland</td></tr>
+  <tr><td>Analog Gauge</td><td>SVG 270&deg; arc, auto-color by threshold</td></tr>
+  <tr><td>Numeric Indicator</td><td>Digital readout with engineering units</td></tr>
+  <tr><td>Bar Graph</td><td>Vertical scale with fill</td></tr>
+  <tr><td>Indicator</td><td>Round lamp, on/off by threshold</td></tr>
+  <tr><td>Trend</td><td>3 channels, cursor, historian, PNG export, print</td></tr>
+  <tr><td>Slider</td><td>Operator control knob</td></tr>
   <tr><td>Button</td><td>Toggle 0/1</td></tr>
-  <tr><td>Text</td><td>withnew valueand</td></tr>
-  <tr><td>Panel inand</td><td>4 channel with colorin andandand</td></tr>
-  <tr><td>Log</td><td>Recent event</td></tr>
+  <tr><td>Text</td><td>Value substitution display</td></tr>
+  <tr><td>Alarm Panel</td><td>4 channels with color-coded status</td></tr>
+  <tr><td>Event Log</td><td>Latest operator events</td></tr>
 </table>
 
 <!-- =================== SHAPES =================== -->
@@ -526,100 +530,100 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Equipment <span class="tag tag-green">33</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Pumps, gates, valves, motors, VFD, fans, compressors, heaters, coolers, heat exchangers, filters, mixers, conveyors, mixers, dampers, augers, furnaces, flareon and other</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Pumps, gate valves, control valves, motors, variable frequency drives, fans, compressors, heaters, coolers, heat exchangers, filters, mixers, conveyors, agitators, dampers, screw feeders, furnaces, flare stacks, and others</p>
   </div>
   <div class="card">
     <div class="card-title">Vessels <span class="tag tag-blue">10</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Tanks, orandwithand withand, horizontal vessels, drain vessels, atand, separators, hoppers, columns</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Tanks, cylindrical vessels, horizontal vessels, drain vessels, sumps, separators, hoppers, columns</p>
   </div>
   <div class="card">
-    <div class="card-title">Electroequipmentand<span class="tag tag-purple">5</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Switches, contactors, withformat, fuses, grounding</p>
+    <div class="card-title">Electrical Equipment <span class="tag tag-purple">5</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Circuit breakers, contactors, transformers, fuses, grounding</p>
   </div>
   <div class="card">
     <div class="card-title">Indicators <span class="tag tag-orange">7</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">LED (green, red, yellow), lamp, withandon, traffic light, flame/flare</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">LED (green, red, yellow), lamp, siren, traffic light, flame/flare</p>
   </div>
 </div>
 
-<p><strong>Pipelines</strong> (5): pipe L, pipe V, tee, elbow, reducer.<br>
-<strong>Primitives</strong>(5): line, directlyangleand, circle, text, manyangleand.</p>
+<p><strong>Pipelines</strong> (5): horizontal pipe, vertical pipe, tee, elbow, reducer.<br>
+<strong>Primitives</strong> (5): line, rectangle, circle, text, polygon.</p>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#127912;</div>
-  <div>All graphic elements bind to signals &mdash; color and andand with in Runtime valueand .</div>
+  <div>All graphic elements can be bound to signals &mdash; color and animation change in Runtime according to the variable value.</div>
 </div>
 
 <!-- =================== WIRES =================== -->
-<h2 id="wires">Connections (wires)</h2>
-<p>Connections withwith click on<strong>output port</strong>block (right), click on<strong>input port</strong>block (left). Wires drawn as Bezier-andin.</p>
+<h2 id="wires">Connections (Wires)</h2>
+<p>Connections are created by clicking the <strong>output port</strong> of a block (right side), then clicking the <strong>input port</strong> of another block (left side). Wires are rendered as Bezier curves.</p>
 <ul>
-  <li>Port inputin &mdash; left block</li>
-  <li>Port outputin &mdash; right block</li>
-  <li>Deletion wires &mdash; select + <kbd>Delete</kbd></li>
+  <li>Input ports &mdash; on the left side of the block</li>
+  <li>Output ports &mdash; on the right side of the block</li>
+  <li>Delete wire &mdash; select + <kbd>Delete</kbd></li>
 </ul>
 
 <!-- =================== PAGES =================== -->
-<h2 id="pages">Multi-page</h2>
-<p>Project may contain main page and andin quantit additional:</p>
+<h2 id="pages">Multi-Page Projects</h2>
+<p>A project can contain a main page and any number of additional pages:</p>
 <ul>
-  <li>Button <strong>+</strong>in header &mdash; add page</li>
-  <li>Tabs &mdash; switchand between pageand</li>
-  <li>Each page and within set blockin and and</li>
+  <li><strong>+</strong> button in the header &mdash; add a new page</li>
+  <li>Tabs &mdash; switch between pages</li>
+  <li>Each page has its own set of blocks and shapes</li>
 </ul>
 
 <!-- =================== POPUPS =================== -->
-<h2 id="popups">Popup</h2>
-<p>Popup &mdash; page, inandwith on in Runtime at click on equipmentand. Used for displayand in .</p>
+<h2 id="popups">Popups</h2>
+<p>Popups are pages that open as modal windows in Runtime when an equipment element is clicked. They are used to display detailed parameters for a specific node.</p>
 
 <!-- =================== RUNTIME =================== -->
-<h2 id="runtime">Runtime Environment (Runtime)</h2>
+<h2 id="runtime">Runtime Environment</h2>
 
-<p>Toggle: button<strong>Runtime</strong> in header.</p>
+<p>Toggle: <strong>Runtime</strong> button in the header.</p>
 
 <div class="card">
-  <div class="card-title">Features Runtime</div>
+  <div class="card-title">Runtime Capabilities</div>
   <ul style="margin:0">
-    <li>Cycle updatand:<strong>50&ndash;1000 with</strong>(by default 100 with)</li>
-    <li>Displayed only andwithand and and (logand hidden)</li>
-    <li>Fullscreen Mode &mdash; <kbd>F11</kbd></li>
-    <li>Protection access logand/password</li>
-    <li>Auto-start Runtime at load (option)</li>
-    <li>Log with and time</li>
-    <li>Control withand and buttonand</li>
-    <li>Click equipmentand &rarr; with and</li>
+    <li>Scan cycle: <strong>50&ndash;1000 ms</strong> (default 100 ms)</li>
+    <li>Only displays and graphics are shown (logic is hidden)</li>
+    <li>Full-screen mode &mdash; <kbd>F11</kbd></li>
+    <li>Access protection for the editor via login/password</li>
+    <li>Auto-start Runtime on load (option)</li>
+    <li>Operator log with timestamps</li>
+    <li>Slider and button control</li>
+    <li>Click on equipment &rarr; popup with details</li>
   </ul>
 </div>
 
 <!-- =================== TRENDS =================== -->
-<h2 id="trends">Trends and archive</h2>
+<h2 id="trends">Trends &amp; Historian</h2>
 
-<p>Block <strong>Trend</strong>supports 3 channel with onwithandinand colorand and nameand. Real-time Buffer &mdash; 200 points.</p>
+<p>The <strong>Trend</strong> block supports 3 channels with configurable colors and names. Real-time buffer &mdash; 200 data points.</p>
 
-<h4>View archive</h4>
+<h4>Viewing Historian Data</h4>
 <div class="steps">
-  <div class="step">Click <strong>details</strong>on</div>
-  <div class="step">Select tag from dropdown list</div>
-  <div class="step">Click period: <strong>1, 2, 6, 12, 24</strong></div>
-  <div class="step">Save to PNG or with</div>
+  <div class="step">Click <strong>Details</strong> on the trend display</div>
+  <div class="step">Select a tag from the drop-down list</div>
+  <div class="step">Select a time range: <strong>1h, 2h, 6h, 12h, 24h</strong></div>
+  <div class="step">Save as PNG or print</div>
 </div>
 
 <!-- =================== ALARMS =================== -->
-<h2 id="alarms">Sound Alerts</h2>
+<h2 id="alarms">Alarm Notifications</h2>
 
-<p>Block <strong>Sound alertand</strong>notand in via WebAudio API:</p>
+<p>The <strong>Alarm Sound</strong> block generates audio via the WebAudio API:</p>
 
 <table>
   <tr><th>Type</th><th>Frequency</th><th>Character</th></tr>
-  <tr><td>Warning</td><td>660</td><td>Soft tone</td></tr>
-  <tr><td>Alarm</td><td>880/440</td><td>Sharp intermittent</td></tr>
-  <tr><td>Information</td><td>520</td><td>Short click</td></tr>
-  <tr><td>Siren</td><td>600/900</td><td>Ascending/andwithand in</td></tr>
-  <tr><td>Custom sound</td><td>&mdash;</td><td>URL mp3/wav file</td></tr>
+  <tr><td>Warning</td><td>660 Hz</td><td>Soft tone</td></tr>
+  <tr><td>Alarm</td><td>880/440 Hz</td><td>Sharp intermittent</td></tr>
+  <tr><td>Information</td><td>520 Hz</td><td>Short click</td></tr>
+  <tr><td>Siren</td><td>600/900 Hz</td><td>Rising/falling wail</td></tr>
+  <tr><td>Custom sound</td><td>&mdash;</td><td>URL of mp3/wav file</td></tr>
 </table>
 
 <!-- =================== PROTOCOLS =================== -->
-<h2 id="protocols">Overview protocolin (9)</h2>
+<h2 id="protocols">Protocol Overview (9)</h2>
 
 <table>
   <tr><th>Protocol</th><th>Standard</th><th>Mode</th><th>Library</th></tr>
@@ -640,238 +644,238 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <div class="grid-3">
   <div class="card">
     <div class="card-title">MMS <span class="tag tag-green">:102</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Read/writ variables IED. Control and andand.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Read/write IED variables. Control and monitoring.</p>
   </div>
   <div class="card">
     <div class="card-title">GOOSE <span class="tag tag-blue">multicast</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Fast event transfer (4 with). Protective inand.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Fast event transfer (4 ms). Protection automation.</p>
   </div>
   <div class="card">
     <div class="card-title">SV <span class="tag tag-purple">multicast</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Instant valueand in . Digital substations.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Instantaneous three-phase current values. Digital substations.</p>
   </div>
 </div>
 
 <!-- =================== OPCUA =================== -->
 <h2 id="opcua">OPC UA</h2>
-<p>OPC UA (IEC 62541) &mdash; andinwith access to data. Gateway launch server on<code>opc.tcp://hostname:4840</code>.</p>
-<p>Settings: SCADA &rarr; Settings &rarr; OPC UA &rarr; endpoint, port, mode withoutwithwithand.</p>
+<p>OPC UA (IEC 62541) &mdash; universal data access. The Gateway starts a server at <code>opc.tcp://hostname:4840</code>.</p>
+<p>Configuration: SCADA &rarr; Settings &rarr; OPC UA &rarr; endpoint, port, security mode.</p>
 
 <!-- =================== MODBUS =================== -->
 <h2 id="modbus">Modbus TCP</h2>
-<p>Standard industrial protocol. Gateway: port<code>502</code> (or <code>1502</code> if busy). Supports functioand: FC 3 (Read Holding), FC 4 (Read Input), FC 6 (Write Single), FC 16 (Write Multiple).</p>
+<p>Standard industrial protocol. Gateway: port <code>502</code> (or <code>1502</code> if in use). Supported function codes: FC 3 (Read Holding Registers), FC 4 (Read Input Registers), FC 6 (Write Single Register), FC 16 (Write Multiple Registers).</p>
 
 <!-- =================== OPCDA =================== -->
 <h2 id="opcda">OPC DA / InTouch / WinCC</h2>
-<p>OPC DA Classic via DCOM. Required Windows. Support Kepware, Wonderware InTouch (<code>Wonderware.InTouch.OPCServer</code>), Siemens WinCC (<code>OPCServer.WinCC</code>).</p>
+<p>Classic OPC DA via DCOM. Windows required. Supports Kepware, Wonderware InTouch (<code>Wonderware.InTouch.OPCServer</code>), Siemens WinCC (<code>OPCServer.WinCC</code>).</p>
 
 <!-- =================== GATEWAY =================== -->
 <h2 id="gateway">SCADA Gateway</h2>
 
-<p>Gateway &mdash; server with system. 12 in and protocolin.</p>
+<p>The Gateway is the server-side component of the system. It runs 12 parallel protocol processing threads.</p>
 
 <div class="card">
-  <div class="card-title">Threadand Gateway</div>
+  <div class="card-title">Gateway Threads</div>
   <table>
-    <tr><th>Thread</th><th>Port</th><th>Assignment</th></tr>
-    <tr><td>HTTP Dashboard</td><td>8088</td><td>Web Control Panel</td></tr>
-    <tr><td>WebSocket Bridge</td><td>8089</td><td>Communication with SCADA</td></tr>
-    <tr><td>OPC UA Server</td><td>4840</td><td>Emulation OPC UA</td></tr>
+    <tr><th>Thread</th><th>Port</th><th>Function</th></tr>
+    <tr><td>HTTP Dashboard</td><td>8088</td><td>Web management panel</td></tr>
+    <tr><td>WebSocket Bridge</td><td>8089</td><td>SCADA communication link</td></tr>
+    <tr><td>OPC UA Server</td><td>4840</td><td>OPC UA emulation</td></tr>
     <tr><td>Modbus TCP Server</td><td>502</td><td>Modbus emulator</td></tr>
     <tr><td>MMS Server</td><td>102</td><td>MMS emulator</td></tr>
     <tr><td>GOOSE Publisher</td><td>239.0.0.1:61850</td><td>Multicast GOOSE</td></tr>
     <tr><td>SV Publisher</td><td>239.0.0.2:61851</td><td>Multicast SV</td></tr>
-    <tr><td>Emulator</td><td>&mdash;</td><td>Data Generation</td></tr>
-    <tr><td>OPC UA Client</td><td>&mdash;</td><td>Real equipmentand</td></tr>
-    <tr><td>Modbus Client</td><td>&mdash;</td><td>Real PLC</td></tr>
+    <tr><td>Emulator</td><td>&mdash;</td><td>Data generation</td></tr>
+    <tr><td>OPC UA Client</td><td>&mdash;</td><td>Real hardware</td></tr>
+    <tr><td>Modbus Client</td><td>&mdash;</td><td>Real PLCs</td></tr>
     <tr><td>OPC DA Client</td><td>&mdash;</td><td>Kepware/InTouch/WinCC</td></tr>
-    <tr><td>SQL Engine</td><td>&mdash;</td><td>SQLite: log, trends</td></tr>
+    <tr><td>SQL Engine</td><td>&mdash;</td><td>SQLite: event log, trends</td></tr>
   </table>
 </div>
 
 <!-- =================== DASHBOARD =================== -->
-<h2 id="dashboard">Dashboard (6 on)</h2>
+<h2 id="dashboard">Dashboard (6 Tabs)</h2>
 
 <p>Access: <code>http://localhost:8088</code></p>
 
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Status</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Cards 9 protocolin, EMU/REAL, operatioand R/W, underkeyed projects, inandandand</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Cards for 9 protocols, EMU/REAL mode, R/W operations, connected projects, verification</p>
   </div>
   <div class="card">
-    <div class="card-title">Connection</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Address all endpoints: WebSocket, OPC UA, Modbus, MMS, REST API</p>
+    <div class="card-title">Connectivity</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Addresses for all endpoints: WebSocket, OPC UA, Modbus, MMS, REST API</p>
   </div>
   <div class="card">
     <div class="card-title">Database</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Sliding window, max. writ, withandwithand, clear, afterand 50 writ</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Rolling window, max records, statistics, cleanup, last 50 records</p>
   </div>
   <div class="card">
     <div class="card-title">OPC Browser</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Tree OPC UA and OPC DA with currentandand valueandand tagin</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">OPC UA and OPC DA tag tree with current tag values</p>
   </div>
   <div class="card">
     <div class="card-title">Users</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">CRUD, 3 roles: Operator, Engineer, Admin. Passwords SHA256</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">CRUD operations, 3 roles: Operator, Engineer, Admin. SHA256 passwords</p>
   </div>
   <div class="card">
-    <div class="card-title">Log</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Full log event with colorin andandand innot</p>
+    <div class="card-title">Event Log</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Full event log with color-coded severity levels</p>
   </div>
 </div>
 
 <!-- =================== DATABASE =================== -->
 <h2 id="database">Database (SQLite)</h2>
 
-<p>File: <code>scada_journal.db</code>(withwith inandwithand with Gateway).</p>
+<p>File: <code>scada_journal.db</code> (created automatically in the same folder as the Gateway).</p>
 
 <table>
-  <tr><th>Table</th><th>Assignment</th></tr>
-  <tr><td>journal</td><td>Log: time, source, level, tag, valueand, message</td></tr>
-  <tr><td>trends</td><td>Trends: time, tag, valueand (writ 5 sec)</td></tr>
-  <tr><td>alarms</td><td>Alarms: start, end, tag, level, message, acknowledgement</td></tr>
-  <tr><td>users</td><td>Users: and, role, SHA256 role, date</td></tr>
+  <tr><th>Table</th><th>Description</th></tr>
+  <tr><td>journal</td><td>Event log: timestamp, source, severity, tag, value, message</td></tr>
+  <tr><td>trends</td><td>Historian: timestamp, tag, value (recorded every 5 seconds)</td></tr>
+  <tr><td>alarms</td><td>Alarms: start, end, tag, severity, message, acknowledgement</td></tr>
+  <tr><td>users</td><td>Users: name, role, SHA256 password, date</td></tr>
 </table>
 
-<p>Storage: with window 30 not, max. 100 000 writ. Volume: ~2 /days.</p>
+<p>Retention: rolling 30-day window, max 100,000 records. Volume: ~2 MB/day.</p>
 
 <!-- =================== USERS =================== -->
-<h2 id="users">Users and roles</h2>
+<h2 id="users">Users &amp; Roles</h2>
 
 <table>
-  <tr><th>Role</th><th>Rights</th></tr>
-  <tr><td><strong>Operator</strong></td><td>Runtime, view</td></tr>
-  <tr><td><strong>Engineer</strong></td><td>+ Editor, settingand</td></tr>
-  <tr><td><strong>Admin</strong></td><td>+ Users, database</td></tr>
+  <tr><th>Role</th><th>Permissions</th></tr>
+  <tr><td><strong>Operator</strong></td><td>Runtime, view only</td></tr>
+  <tr><td><strong>Engineer</strong></td><td>+ Editor, settings</td></tr>
+  <tr><td><strong>Admin</strong></td><td>+ User management, database</td></tr>
 </table>
 
 <!-- =================== API =================== -->
-<h2 id="api">REST API (15 endpoints)</h2>
+<h2 id="api">REST API (15 Endpoints)</h2>
 
 <table>
   <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
-  <tr><td>GET</td><td><code>/api</code></td><td>Status protocolin</td></tr>
-  <tr><td>GET</td><td><code>/api/db/stats</code></td><td>DB statistics</td></tr>
-  <tr><td>GET</td><td><code>/api/db/last</code></td><td>Recent 50 writ</td></tr>
-  <tr><td>GET</td><td><code>/api/users</code></td><td>List user</td></tr>
-  <tr><td>GET</td><td><code>/api/opc/browse</code></td><td>Overview OPC tagin</td></tr>
+  <tr><td>GET</td><td><code>/api</code></td><td>Protocol status</td></tr>
+  <tr><td>GET</td><td><code>/api/db/stats</code></td><td>Database statistics</td></tr>
+  <tr><td>GET</td><td><code>/api/db/last</code></td><td>Last 50 records</td></tr>
+  <tr><td>GET</td><td><code>/api/users</code></td><td>User list</td></tr>
+  <tr><td>GET</td><td><code>/api/opc/browse</code></td><td>OPC tag browser</td></tr>
   <tr><td>GET</td><td><code>/api/trends/history</code></td><td>Historical trends</td></tr>
-  <tr><td>GET</td><td><code>/api/trends/tags</code></td><td>Access tagand</td></tr>
+  <tr><td>GET</td><td><code>/api/trends/tags</code></td><td>Available tags</td></tr>
   <tr><td>POST</td><td><code>/api/emu/toggle</code></td><td>EMU ON/OFF</td></tr>
-  <tr><td>POST</td><td><code>/api/config</code></td><td>Configuration SCADA</td></tr>
-  <tr><td>POST</td><td><code>/api/db/clear</code></td><td>DB cleanup</td></tr>
-  <tr><td>POST</td><td><code>/api/db/cleanup</code></td><td>Deletion with writ</td></tr>
-  <tr><td>POST</td><td><code>/api/db/config</code></td><td>Settings notand</td></tr>
+  <tr><td>POST</td><td><code>/api/config</code></td><td>Configuration from SCADA</td></tr>
+  <tr><td>POST</td><td><code>/api/db/clear</code></td><td>Clear database</td></tr>
+  <tr><td>POST</td><td><code>/api/db/cleanup</code></td><td>Delete old records</td></tr>
+  <tr><td>POST</td><td><code>/api/db/config</code></td><td>Storage settings</td></tr>
   <tr><td>POST</td><td><code>/api/users/add</code></td><td>Add user</td></tr>
   <tr><td>POST</td><td><code>/api/users/delete</code></td><td>Delete user</td></tr>
-  <tr><td>POST</td><td><code>/api/log/clear</code></td><td>Log cleanup</td></tr>
+  <tr><td>POST</td><td><code>/api/log/clear</code></td><td>Clear event log</td></tr>
 </table>
 
 <!-- =================== PROJECTS =================== -->
-<h2 id="projects">Project</h2>
+<h2 id="projects">Projects</h2>
 
 <table>
-  <tr><th>Action</th><th>How</th></tr>
-  <tr><td>Save</td><td>&#128190; &rarr; ininwithand and &rarr; localStorage</td></tr>
-  <tr><td>Load</td><td>&#128194; &rarr; select</td></tr>
+  <tr><th>Action</th><th>How To</th></tr>
+  <tr><td>Save</td><td>&#128190; &rarr; enter name &rarr; localStorage</td></tr>
+  <tr><td>Load</td><td>&#128194; &rarr; select project</td></tr>
   <tr><td>Export</td><td>&#10515; &rarr; download JSON</td></tr>
   <tr><td>Import</td><td>&#128194; &rarr; Import &rarr; select JSON</td></tr>
 </table>
 
-<p>Format: JSON, enabl blockand, shapes, wires, settingand, page.</p>
+<p>Format: JSON, includes blocks, shapes, wires, settings, and pages.</p>
 
 <!-- =================== SETTINGS =================== -->
-<h2 id="settings">Settings (9 on)</h2>
+<h2 id="settings">Settings (9 Tabs)</h2>
 
-<p>SCADA &rarr; button<strong>Settings</strong> in header:</p>
+<p>SCADA &rarr; <strong>Settings</strong> button in the header:</p>
 
 <table>
-  <tr><th>Tab</th><th>Parameter</th></tr>
-  <tr><td>Main</td><td>Cycle (with), inlaunch, full screen, logand/role</td></tr>
-  <tr><td>OPC UA</td><td>Endpoint, port, withoutwithwith</td></tr>
+  <tr><th>Tab</th><th>Parameters</th></tr>
+  <tr><td>General</td><td>Scan cycle (ms), auto-start, full screen, login/password</td></tr>
+  <tr><td>OPC UA</td><td>Endpoint, port, security mode</td></tr>
   <tr><td>OPC DA</td><td>DCOM server, ProgID</td></tr>
   <tr><td>Modbus</td><td>TCP port, timeout</td></tr>
   <tr><td>MMS</td><td>Port, version, TSEL, TLS</td></tr>
   <tr><td>GOOSE</td><td>AppID, VLAN, interface</td></tr>
-  <tr><td>SV</td><td>Interface, frequenc andwithandandand</td></tr>
+  <tr><td>SV</td><td>Interface, sampling rate</td></tr>
   <tr><td>InTouch</td><td>Server, Access Name</td></tr>
   <tr><td>WinCC</td><td>Server, Connection</td></tr>
 </table>
 
 <!-- =================== REAL-HW =================== -->
-<h2 id="real-hw">Connection real equipmentand</h2>
+<h2 id="real-hw">Connecting to Real Hardware</h2>
 
 <div class="steps">
-  <div class="step">SCADA &rarr;<strong>Settings</strong>&rarr; on need protocol &rarr; and with equipmentand</div>
-  <div class="step">Dashboard Gateway &rarr;<strong>Status</strong> &rarr; click <strong>EMU OFF</strong></div>
-  <div class="step">Gateway inandwithand underkeyandwith. In status:<strong>REAL</strong> instead <strong>EMU</strong></div>
+  <div class="step">In SCADA &rarr; <strong>Settings</strong> &rarr; select the protocol tab &rarr; enter the device address</div>
+  <div class="step">In the Gateway Dashboard &rarr; <strong>Status</strong> &rarr; click <strong>EMU OFF</strong></div>
+  <div class="step">The Gateway will connect automatically. Status shows <strong>REAL</strong> instead of <strong>EMU</strong></div>
 </div>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>Gateway inandwithand withnew andandand (<code>asyncua</code>, <code>pymodbus</code>, <code>OpenOPC</code>) at launch.</div>
+  <div>The Gateway automatically detects installed libraries (<code>asyncua</code>, <code>pymodbus</code>, <code>OpenOPC</code>) at startup.</div>
 </div>
 
 <!-- =================== BACKUP =================== -->
-<h2 id="backup">Reserve andinand</h2>
+<h2 id="backup">Backup</h2>
 
 <table>
-  <tr><th>Data</th><th>Storage</th><th>Reserveon and</th></tr>
-  <tr><td>Project SCADA</td><td>localStorage browser</td><td>Export in JSON</td></tr>
-  <tr><td>Trends and log</td><td><code>scada_journal.db</code></td><td>Copy file</td></tr>
-  <tr><td>Settings Gateway</td><td><code>scada_gateway.json</code></td><td>Copy file</td></tr>
+  <tr><th>Data</th><th>Storage</th><th>Backup Method</th></tr>
+  <tr><td>SCADA Projects</td><td>Browser localStorage</td><td>Export to JSON</td></tr>
+  <tr><td>Trends &amp; Event Log</td><td><code>scada_journal.db</code></td><td>Copy the file</td></tr>
+  <tr><td>Gateway Settings</td><td><code>scada_gateway.json</code></td><td>Copy the file</td></tr>
 </table>
 
 <!-- =================== TROUBLESHOOT =================== -->
 <h2 id="troubleshoot">Troubleshooting</h2>
 
 <div class="card" style="border-left: 3px solid var(--accent-orange);">
-  <div class="card-title">SCADA not underkeywith Gateway</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Check<code>SCADA_Gateway.exe</code>running (line<code>All servers running!</code>). Make sure port 8089 not blockandwith andinandwith.</p>
+  <div class="card-title">SCADA cannot connect to Gateway</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Verify that <code>SCADA_Gateway.exe</code> is running (look for <code>All servers running!</code>). Ensure port 8089 is not blocked by antivirus software.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-blue);">
   <div class="card-title">Gateway: &laquo;asyncua not found&raquo;</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Normal for standalone delivery. Gateway operation in mode andand &mdash; inwith notandwith inwith emulator.</p>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">This is normal for the standalone package. The Gateway operates in emulation mode &mdash; all data is generated by the built-in emulator.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-orange);">
-  <div class="card-title">Instruments in Runtime not shown valueand</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Check onandand pointand<strong>GW</strong>in header. If missing &mdash; Gateway not underkey. Click Runtime again after launch Gateway.</p>
+  <div class="card-title">Instruments in Runtime display no values</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Check for the green <strong>GW</strong> indicator in the header. If absent &mdash; the Gateway is not connected. Click Runtime again after starting the Gateway.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-blue);">
-  <div class="card-title">Project not saved</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">localStorage full. Remove unused projects or withportand in JSON.</p>
+  <div class="card-title">Project cannot be saved</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">localStorage is full. Delete unused projects or export them to JSON.</p>
 </div>
 
 <!-- =================== SECURITY =================== -->
 <h2 id="security">Security</h2>
 
 <ul>
-  <li><strong>Trial-mode:</strong>2 with operation with anti-tamper and</li>
-  <li><strong>Integrity:</strong>SHA256 hash JSX-code, check at load</li>
-  <li><strong>Base64:</strong>andwith andin inand HTML</li>
-  <li><strong>Protection :</strong>logand/role in setting</li>
+  <li><strong>Trial mode:</strong> 2-hour operation with anti-tamper protection</li>
+  <li><strong>Integrity:</strong> SHA256 hash of JSX code, verified on load</li>
+  <li><strong>Base64:</strong> source code is encoded inside the HTML file</li>
+  <li><strong>Editor protection:</strong> login/password in settings</li>
   <li><strong>Roles:</strong> Operator / Engineer / Admin</li>
-  <li><strong>Passwords:</strong> SHA256 hash in SQLite</li>
+  <li><strong>Passwords:</strong> SHA256 hash stored in SQLite</li>
 </ul>
 
 <!-- =================== LICENSE =================== -->
 <h2 id="license">Licensing</h2>
 
-<p>Built-in licensing without activation servers. Each build withand:</p>
+<p>Built-in licensing system with no activation servers required. Each build contains:</p>
 
 <ul>
-  <li><strong>Build ID</strong>&mdash; 16-symbol SHA256 hash</li>
-  <li><strong>License Key</strong>&mdash; 4 8 symbolin (MD5)</li>
-  <li><strong>Integrity Hash</strong>&mdash; SHA256 roleon with</li>
+  <li><strong>Build ID</strong> &mdash; 16-character SHA256 hash</li>
+  <li><strong>License Key</strong> &mdash; 4 groups of 8 characters (MD5)</li>
+  <li><strong>Integrity Hash</strong> &mdash; SHA256 checksum</li>
 </ul>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>For atand licensand with:<a href="mailto:scada@atwai.ru">scada@atwai.ru</a></div>
+  <div>To purchase a license, contact: <a href="mailto:scada@atwai.ru">scada@atwai.ru</a></div>
 </div>
 
 <!-- =================== CONTACTS =================== -->
@@ -889,7 +893,9 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 </div>
 
 <p style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-dim)">
-  &copy; 2026 BitSCADA &mdash; ATW Technologies. All rights reserved.<br>Applied for registerand in Registry Russian (MinDigit).</p>
+  &copy; 2026 BitSCADA &mdash; ATW Technologies. All rights reserved.<br>
+  Application submitted for registration in the Russian Software Registry (Ministry of Digital Development).
+</p>
 
 </div>
 
