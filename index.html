@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO: Primary ===== -->
+<title>BitSCADA — Industrial SCADA System IEC 61850 | ATW Technologies</title>
+<meta name="description" content="BitSCADA — SCADA system in a single HTML file. IEC 61850, OPC UA, Modbus TCP support. 53 function blocks, 65 graphic elements, zero installation. Download free demo.">
+<meta name="keywords" content="BitSCADA, SCADA system, IEC 61850, OPC UA, Modbus TCP, MMS, GOOSE, IACS, dispatching, mimic diagrams, industrial automation, browser-based SCADA, software, download SCADA, ATW Technologies, atwai">
+<meta name="author" content="ATW Technologies">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://scada.atwai.ru/">
+
+<!-- ===== SEO: Open Graph (соцсети, мессенджеры) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scada.atwai.ru/">
+<meta property="og:title" content="BitSCADA — Industrial SCADA System IEC 61850">
+<meta property="og:description" content="Browser-based SCADA in a single HTML file. 9 industrial protocols, 53 function blocks, zero installation. ATW Technologies.">
+<meta property="og:image" content="https://scada.atwai.ru/img/overview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="BitSCADA">
+
+<!-- ===== SEO: Twitter/X Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BitSCADA — SCADA IEC 61850 in a single HTML file">
+<meta name="twitter:description" content="Industrial SCADA, zero installation. OPC UA, Modbus, MMS, GOOSE.">
+<meta name="twitter:image" content="https://scada.atwai.ru/img/overview.png">
+
+<!-- ===== SEO: Яндекс ===== -->
+<meta name="yandex-verification" content="ВСТАВИТЬ_КОД_ИЗ_ЯНДЕКС_ВЕБМАСТЕРА">
+
+<!-- ===== SEO: Google ===== -->
+<meta name="google-site-verification" content="ВСТАВИТЬ_КОД_ИЗ_GOOGLE_SEARCH_CONSOLE">
+
+<!-- ===== SEO: Schema.org — SoftwareApplication ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BitSCADA",
+  "alternateName": ["BitSCADA IEC 61850", "ATW BitSCADA"],
+  "applicationCategory": "IndustrialApplication",
+  "applicationSubCategory": "SCADA",
+  "operatingSystem": "Windows, Linux, macOS",
+  "description": "Industrial SCADA system in a single HTML file with IEC 61850 (MMS, GOOSE, SV), OPC UA, Modbus TCP support. 53 function blocks, 65 graphic elements, Python Gateway, zero installation.",
+  "featureList": [
+    "IEC 61850 MMS, GOOSE, Sampled Values",
+    "OPC UA, OPC DA",
+    "Modbus TCP",
+    "53 function blocks",
+    "65 graphic elements",
+    "Python SCADA Gateway",
+    "REST API 15 endpoints",
+    "Zero installation",
+    "Offline mode"
+  ],
+  "softwareVersion": "8",
+  "releaseNotes": "Version 8 — Production Ready, IEC 61850",
+  "downloadUrl": "https://scada.atwai.ru/BitSCADA_Demo.zip",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RUB",
+    "description": "Free demo, 2 hours runtime"
+  },
+  "url": "https://scada.atwai.ru",
+  "screenshot": "https://scada.atwai.ru/img/overview.png",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ATW Technologies",
+    "alternateName": "ATWAI",
+    "url": "https://atwai.ru",
+    "email": "scada@atwai.ru",
+    "telephone": "+74951084804",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU",
+      "addressLocality": "Москва"
+    }
+  },
+  "inLanguage": "en",
+  "countryOfOrigin": "RU"
+}
+</script>
+
+<!-- ===== SEO: Schema.org — Organization ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ATW Technologies",
+  "alternateName": ["ATWAI", "ATW"],
+  "url": "https://atwai.ru",
+  "logo": "https://scada.atwai.ru/img/overview.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+74951084804",
+    "email": "scada@atwai.ru",
+    "contactType": "sales",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://scada.atwai.ru",
+    "https://atwai.ru"
+  ]
+}
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #060a12;
+  --bg-secondary: #0b1120;
+  --bg-card: #0f1729;
+  --bg-card-hover: #141e33;
+  --accent: #00e8a8;
+  --accent-blue: #4da6ff;
+  --accent-orange: #ff6b35;
+  --accent-purple: #b070ff;
+  --accent-red: #ff3050;
+  --text-primary: #e0e8f4;
+  --text-secondary: #8899b4;
+  --text-dim: #4a5a74;
+  --border: #1a2438;
+  --border-glow: rgba(0, 232, 168, 0.3);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 40px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(6, 10, 18, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+nav.scrolled { background: rgba(6, 10, 18, 0.95); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+.nav-logo {
+  display: flex; align-items: center; gap: 0;
+  font-size: 22px; font-weight: 900; letter-spacing: -0.02em;
+  text-decoration: none; color: var(--text-primary); position: relative;
+  font-family: 'JetBrains Mono', monospace;
+}
+.nav-logo .logo-text {
+  position: relative; display: inline-block;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 60%, var(--accent-purple) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.nav-logo .logo-text::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 232, 168, 0.06) 2px,
+    rgba(0, 232, 168, 0.06) 4px
+  );
+  pointer-events: none; animation: scanlines 3s linear infinite;
+}
+@keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none; font-size: 14px;
+  font-weight: 500; transition: color 0.3s; position: relative;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+  background: var(--accent); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  padding: 8px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  background: linear-gradient(135deg, var(--accent), #00c492);
+  color: #060a12; text-decoration: none; transition: all 0.3s;
+  border: none; cursor: pointer;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 232, 168, 0.3); }
+
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.burger span { display: block; width: 24px; height: 2px; background: var(--text-secondary); transition: all 0.3s; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; padding: 120px 40px 80px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(0, 232, 168, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(77, 166, 255, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(176, 112, 255, 0.04) 0%, transparent 70%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 232, 168, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 232, 168, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+.hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 20px; font-size: 13px;
+  background: rgba(0, 232, 168, 0.08); border: 1px solid rgba(0, 232, 168, 0.2);
+  color: var(--accent); font-weight: 500; margin-bottom: 32px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse-dot 2s infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900;
+  letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px;
+}
+.hero h1 .gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-secondary);
+  max-width: 650px; margin: 0 auto 40px; line-height: 1.7; font-weight: 400;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 48px; margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-size: 2.5rem; font-weight: 900; font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-stat-label { font-size: 13px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+.hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 36px; border-radius: 10px; font-size: 15px; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #00c492);
+  color: #060a12; text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 232, 168, 0.35); }
+.btn-secondary {
+  padding: 14px 36px; border-radius: 10px; font-size: 15px; font-weight: 600;
+  background: transparent; color: var(--text-primary); text-decoration: none;
+  border: 1px solid var(--border); cursor: pointer; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: rgba(0, 232, 168, 0.05); }
+
+/* ===== SHOWCASE ===== */
+.showcase {
+  padding: 0 40px 100px; max-width: 1300px; margin: 0 auto;
+}
+.showcase-frame {
+  position: relative; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(0, 232, 168, 0.05);
+}
+.showcase-frame::before {
+  content: ''; position: absolute; inset: -1px; border-radius: 16px; padding: 1px;
+  background: linear-gradient(135deg, var(--accent), transparent 40%, transparent 60%, var(--accent-blue));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; z-index: 1;
+}
+.showcase-bar {
+  background: var(--bg-card); padding: 10px 16px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.showcase-dot { width: 10px; height: 10px; border-radius: 50%; }
+.showcase-dot:nth-child(1) { background: #ff5f57; }
+.showcase-dot:nth-child(2) { background: #ffbd2e; }
+.showcase-dot:nth-child(3) { background: #28c840; }
+.showcase-title {
+  flex: 1; text-align: center; font-size: 12px; color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+.showcase-frame img {
+  width: 100%; display: block; transition: transform 8s ease;
+}
+.showcase-frame:hover img { transform: scale(1.03); }
+
+/* ===== SECTIONS ===== */
+section { padding: 100px 40px; }
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-tag {
+  display: inline-block; padding: 4px 14px; border-radius: 6px;
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.15em; color: var(--accent);
+  background: rgba(0, 232, 168, 0.08); border: 1px solid rgba(0, 232, 168, 0.15);
+  margin-bottom: 16px; font-family: 'JetBrains Mono', monospace;
+}
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+  letter-spacing: -0.03em; margin-bottom: 16px;
+}
+.section-header p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 16px; }
+
+/* ===== FEATURES ===== */
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; max-width: 1200px; margin: 0 auto;
+}
+.feature-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 32px; transition: all 0.4s;
+  position: relative; overflow: hidden;
+}
+.feature-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.feature-card:hover { border-color: rgba(0, 232, 168, 0.3); transform: translateY(-4px); background: var(--bg-card-hover); }
+.feature-card:hover::before { opacity: 1; }
+.feature-icon {
+  width: 48px; height: 48px; border-radius: 12px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; font-size: 22px;
+  background: rgba(0, 232, 168, 0.08); border: 1px solid rgba(0, 232, 168, 0.15);
+}
+.feature-card:nth-child(2) .feature-icon { background: rgba(77, 166, 255, 0.08); border-color: rgba(77, 166, 255, 0.15); }
+.feature-card:nth-child(3) .feature-icon { background: rgba(176, 112, 255, 0.08); border-color: rgba(176, 112, 255, 0.15); }
+.feature-card:nth-child(4) .feature-icon { background: rgba(255, 107, 53, 0.08); border-color: rgba(255, 107, 53, 0.15); }
+.feature-card:nth-child(5) .feature-icon { background: rgba(77, 166, 255, 0.08); border-color: rgba(77, 166, 255, 0.15); }
+.feature-card:nth-child(6) .feature-icon { background: rgba(0, 232, 168, 0.08); border-color: rgba(0, 232, 168, 0.15); }
+.feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+.feature-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+
+/* ===== PROTOCOLS ===== */
+.protocols { background: var(--bg-secondary); }
+.proto-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; max-width: 1000px; margin: 0 auto;
+}
+.proto-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; text-align: center; transition: all 0.3s;
+}
+.proto-card:hover { border-color: rgba(0, 232, 168, 0.3); transform: translateY(-2px); }
+.proto-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; font-family: 'JetBrains Mono', monospace; }
+.proto-std { font-size: 12px; color: var(--text-dim); }
+.proto-mode {
+  display: inline-block; margin-top: 10px; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 600; font-family: 'JetBrains Mono', monospace;
+  background: rgba(0, 232, 168, 0.1); color: var(--accent); border: 1px solid rgba(0, 232, 168, 0.2);
+}
+.proto-mode.emu { background: rgba(77, 166, 255, 0.1); color: var(--accent-blue); border-color: rgba(77, 166, 255, 0.2); }
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px; max-width: 1200px; margin: 0 auto;
+}
+.gallery-item {
+  position: relative; border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--border); cursor: pointer; transition: all 0.4s;
+}
+.gallery-item:hover { border-color: var(--border-glow); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.gallery-item img { width: 100%; display: block; transition: transform 0.6s; }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 16px 20px; font-size: 13px; font-weight: 600;
+  background: linear-gradient(transparent, rgba(6, 10, 18, 0.95));
+  color: var(--text-primary);
+}
+.gallery-label span { display: block; font-size: 11px; color: var(--text-dim); margin-top: 2px; font-weight: 400; }
+
+/* ===== ARCHITECTURE ===== */
+.arch-container { max-width: 1000px; margin: 0 auto; }
+.arch-diagram {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 48px; position: relative; overflow: hidden;
+}
+.arch-row {
+  display: flex; justify-content: center; gap: 20px; margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.arch-block {
+  padding: 14px 24px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  text-align: center; min-width: 140px; transition: all 0.3s;
+  font-family: 'JetBrains Mono', monospace;
+}
+.arch-browser { background: rgba(77, 166, 255, 0.1); border: 1px solid rgba(77, 166, 255, 0.25); color: var(--accent-blue); }
+.arch-gateway { background: rgba(0, 232, 168, 0.1); border: 1px solid rgba(0, 232, 168, 0.25); color: var(--accent); }
+.arch-proto { background: rgba(176, 112, 255, 0.1); border: 1px solid rgba(176, 112, 255, 0.25); color: var(--accent-purple); font-size: 11px; min-width: 100px; padding: 10px 14px; }
+.arch-device { background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.25); color: var(--accent-orange); font-size: 11px; min-width: 100px; padding: 10px 14px; }
+.arch-arrow {
+  text-align: center; color: var(--text-dim); font-size: 20px; margin: 12px 0;
+}
+.arch-label { text-align: center; font-size: 11px; color: var(--text-dim); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.15em; }
+
+/* ===== SPECS TABLE ===== */
+.specs { background: var(--bg-secondary); }
+.specs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; max-width: 1000px; margin: 0 auto;
+}
+.spec-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.spec-item-label { font-size: 14px; color: var(--text-secondary); }
+.spec-item-value {
+  font-size: 20px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+}
+
+/* ===== ADVANTAGES ===== */
+.advantages-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; max-width: 1200px; margin: 0 auto;
+}
+.adv-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 32px; transition: all 0.3s;
+}
+.adv-card:hover { border-color: rgba(0, 232, 168, 0.3); }
+.adv-num {
+  font-size: 48px; font-weight: 900; font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, var(--accent), transparent);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; opacity: 0.3; margin-bottom: 8px; line-height: 1;
+}
+.adv-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.adv-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+/* ===== CTA ===== */
+.cta-section {
+  padding: 120px 40px; text-align: center;
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+  position: relative;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 232, 168, 0.06), transparent 70%);
+  pointer-events: none;
+}
+.cta-content { position: relative; z-index: 2; }
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+  letter-spacing: -0.03em; margin-bottom: 16px;
+}
+.cta-content p { color: var(--text-secondary); max-width: 500px; margin: 0 auto 40px; font-size: 16px; }
+.cta-contacts {
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 48px;
+}
+.cta-contact {
+  display: flex; align-items: center; gap: 12px;
+  color: var(--text-secondary); text-decoration: none; font-size: 15px; transition: color 0.3s;
+}
+.cta-contact:hover { color: var(--accent); }
+.cta-contact-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 32px 40px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-copy { font-size: 13px; color: var(--text-dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--text-dim); text-decoration: none; font-size: 13px; transition: color 0.3s; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 9999; display: none;
+  align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(10px);
+  cursor: zoom-out;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 92vw; max-height: 90vh; border-radius: 12px;
+  box-shadow: 0 0 80px rgba(0, 232, 168, 0.1);
+  animation: lb-in 0.3s ease;
+}
+@keyframes lb-in { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); border: none; cursor: pointer;
+  color: white; font-size: 20px; display: flex; align-items: center; justify-content: center;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+/* ===== ANIMATIONS ===== */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; background: rgba(6,10,18,0.98); padding: 20px; gap: 16px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .nav-cta { display: none; }
+  .burger { display: flex; }
+  section { padding: 60px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-stats { gap: 24px; }
+  .hero-stat-num { font-size: 2rem; }
+  .showcase { padding: 0 20px 60px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .arch-row { gap: 10px; }
+  .arch-block { min-width: 80px; padding: 10px 12px; font-size: 11px; }
+  footer { flex-direction: column; text-align: center; }
+  .cta-contacts { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="logo-text">BitSCADA</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#gallery">Интерфейс</a></li>
+    <li><a href="#arch">Architecture</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="docs/">Documentation</a></li>
+  </ul>
+  <a href="BitSCADA_Demo.zip" class="nav-cta" download>Download демо</a>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">v8 IEC 61850 &mdash; Production Ready</div>
+    <h1>
+      <span class="gradient">BitSCADA</span><br>
+      SCADA-система<br>промышленного уровня
+    </h1>
+    <p class="hero-sub">
+      Browserная SCADA in a single HTML file. 53 function blocks,
+      9 промышленных protocols, графический редактор мнемосхем
+      и среда исполнения &mdash; zero installation.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">53</div>
+        <div class="hero-stat-label">Функц. блока</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">9</div>
+        <div class="hero-stat-label">Протоколов</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">65</div>
+        <div class="hero-stat-label">Граф. elements</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5K+</div>
+        <div class="hero-stat-label">Тегов / сек</div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="BitSCADA_Demo.zip" class="btn-primary" download>&#11015; Download демо (20 МБ)</a>
+      <a href="docs/" class="btn-secondary">&#128214; Documentation</a>
+      <a href="#contact" class="btn-secondary">&#128231; Request лицензию</a>
+    </div>
+    <p style="margin-top:16px;font-size:13px;color:var(--text-dim)">Demo-версия работает 2 часа. Включён демонстрационный проект.</p>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<div class="showcase reveal">
+  <div class="showcase-frame">
+    <div class="showcase-bar">
+      <div class="showcase-dot"></div>
+      <div class="showcase-dot"></div>
+      <div class="showcase-dot"></div>
+      <div class="showcase-title">BitSCADA IEC 61850 &mdash; Runtime + Gateway + Editor</div>
+    </div>
+    <img src="img/overview.png" alt="BitSCADA - complete интерфейс системы" loading="lazy">
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-header reveal">
+    <div class="section-tag">Features</div>
+    <h2>Всё for промышленной автоматfromации</h2>
+    <p>Полный набор инструментов for создания SCADA-проектов любой сложности</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#127912;</div>
+      <h3>Графический редактор</h3>
+      <p>Drag-and-drop размещение blocks, масштабирование, многостраничность, попапы, автораскладка. 65 graphic elements: насосы, задвижки, ёмкости, трубопроводы.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#9889;</div>
+      <h3>Runtime &mdash; среда исполнения</h3>
+      <p>Цикл обновления 50&ndash;1000 мс. Полноэкранный режим, защита паролем, звуковые оповещения 4 типов, журнал оператора с метками времени.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128268;</div>
+      <h3>53 function blocks</h3>
+      <p>Входы, выходы, логика (AND/OR/NOT/XOR), вычисления (ПИД, фильтр, RMS), программы (Script, SQL), 10 типов дисплеев (тренды, приборы, индикаторы).</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128274;</div>
+      <h3>9 промышленных protocols</h3>
+      <p>MMS, GOOSE, SV (IEC 61850), OPC UA, Modbus TCP, OPC DA, Wonderware InTouch, Siemens WinCC, SQL. Встроенный эмулятор for тестирования.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128187;</div>
+      <h3>Gateway + Emulator</h3>
+      <p>12 параллельных потоков, Dashboard с 6 вкладками, OPC-браузер, управление пользователями, REST API с 15 endpoints, база SQLite.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="feature-icon">&#128196;</div>
+      <h3>Single file &mdash; вся система</h3>
+      <p>~240 КБ HTML + ~25 МБ Gateway EXE. Без установки, без зависимостей. Работает в любом браузере на Windows, Linux, macOS. 99% собственного кода.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOLS -->
+<section id="protocols" class="protocols">
+  <div class="section-header reveal">
+    <div class="section-tag">Protocols</div>
+    <h2>9 промышленных protocols</h2>
+    <p>Полная поддержка стандартов IEC 61850, OPC и промышленных шин</p>
+  </div>
+  <div class="proto-grid">
+    <div class="proto-card reveal">
+      <div class="proto-name">MMS</div>
+      <div class="proto-std">IEC 61850-8-1</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">GOOSE</div>
+      <div class="proto-std">IEC 61850-8-1</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">SV</div>
+      <div class="proto-std">IEC 61850-9-2</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">OPC UA</div>
+      <div class="proto-std">IEC 62541</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">Modbus TCP</div>
+      <div class="proto-std">Standard</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">OPC DA</div>
+      <div class="proto-std">DCOM</div>
+      <div class="proto-mode">REAL / EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">InTouch</div>
+      <div class="proto-std">Wonderware</div>
+      <div class="proto-mode emu">EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">WinCC</div>
+      <div class="proto-std">Siemens</div>
+      <div class="proto-mode emu">EMU</div>
+    </div>
+    <div class="proto-card reveal">
+      <div class="proto-name">SQL</div>
+      <div class="proto-std">SQLite</div>
+      <div class="proto-mode">REAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header reveal">
+    <div class="section-tag">Интерфейс</div>
+    <h2>Профессиональный промышленный UI</h2>
+    <p>Тёмная тема, оптимfromированная for диспетчерских и ЦУП</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/runtime.png" alt="BitSCADA Runtime" loading="lazy">
+      <div class="gallery-label">Runtime &mdash; mimic diagrams и попапы<span>Instruments, тренды, графика, журнал</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/mnemo.png" alt="BitSCADA мнемосхема" loading="lazy">
+      <div class="gallery-label">Mimic Diagram НПУ<span>Установка подогрева и сепарации нефти</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/gauges.png" alt="BitSCADA детальный вид" loading="lazy">
+      <div class="gallery-label">Детальный вид оборудования<span>Стрелочные приборы, индикаторы, значения</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/gateway.png" alt="BitSCADA Gateway" loading="lazy">
+      <div class="gallery-label">SCADA Gateway &mdash; статус protocols<span>OPC UA, Modbus, MMS, GOOSE, верификация</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/opc-browser.png" alt="BitSCADA OPC Browser" loading="lazy">
+      <div class="gallery-label">OPC-браузер<span>Обзор тегов OPC UA и OPC DA</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openLightbox(this)">
+      <img src="img/trends.png" alt="BitSCADA тренды" loading="lazy">
+      <div class="gallery-label">Тренды и ПИД-регулятор<span>Архив данных, курсор, 3 канала</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="arch" class="protocols">
+  <div class="section-header reveal">
+    <div class="section-tag">Architecture</div>
+    <h2>Простая и надёжная архитектура</h2>
+    <p>Два компонента: браузерный клиент + серверный Gateway</p>
+  </div>
+  <div class="arch-container reveal">
+    <div class="arch-diagram">
+      <div class="arch-label">Browser (любой ПК)</div>
+      <div class="arch-row">
+        <div class="arch-block arch-browser">BitSCADA.html<br><small style="opacity:0.6">~240 КБ | React 18</small></div>
+      </div>
+      <div class="arch-arrow">&#8597; WebSocket</div>
+      <div class="arch-label">Server (Windows / Linux)</div>
+      <div class="arch-row">
+        <div class="arch-block arch-gateway">SCADA Gateway<br><small style="opacity:0.6">Python | 12 потоков</small></div>
+      </div>
+      <div class="arch-arrow">&#8595; Промышленные протоколы</div>
+      <div class="arch-label">Equipment</div>
+      <div class="arch-row">
+        <div class="arch-block arch-proto">OPC UA<br>:4840</div>
+        <div class="arch-block arch-proto">Modbus<br>:502</div>
+        <div class="arch-block arch-proto">MMS<br>:102</div>
+        <div class="arch-block arch-proto">GOOSE<br>multicast</div>
+        <div class="arch-block arch-proto">SV<br>multicast</div>
+      </div>
+      <div class="arch-row" style="margin-top:8px">
+        <div class="arch-block arch-device">ПЛК</div>
+        <div class="arch-block arch-device">IED</div>
+        <div class="arch-block arch-device">Контроллеры</div>
+        <div class="arch-block arch-device">Датчики</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs">
+  <div class="section-header reveal">
+    <div class="section-tag">Характеристики</div>
+    <h2>Цифры говорят сами за себя</h2>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item reveal"><span class="spec-item-label">Function Blocks</span><span class="spec-item-value">53</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Graphic Elements</span><span class="spec-item-value">65</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Промышленные протоколы</span><span class="spec-item-value">9</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Элементов палитры</span><span class="spec-item-value">118</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Потоков Gateway</span><span class="spec-item-value">12</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">REST API endpoints</span><span class="spec-item-value">15</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Вкладок Dashboard</span><span class="spec-item-value">6</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Собственный код</span><span class="spec-item-value">99%</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Size приложения</span><span class="spec-item-value">240 КБ</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Таблиц БД</span><span class="spec-item-value">4</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Разделов справки</span><span class="spec-item-value">14</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Звуковых оповещений</span><span class="spec-item-value">5</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Тегов в секунду</span><span class="spec-item-value">5000+</span></div>
+    <div class="spec-item reveal"><span class="spec-item-label">Мин. цикл обновления</span><span class="spec-item-value">50 мс</span></div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="protocols">
+  <div class="section-header reveal">
+    <div class="section-tag">Преимущества</div>
+    <h2>Почему BitSCADA</h2>
+  </div>
+  <div class="advantages-grid">
+    <div class="adv-card reveal">
+      <div class="adv-num">01</div>
+      <h3>Нулевая установка</h3>
+      <p>Откройте HTML-файл в браузере &mdash; система готова к работе. Никаких инсталляторов, серверов, баз данных. Single file = полная SCADA.</p>
+    </div>
+    <div class="adv-card reveal">
+      <div class="adv-num">02</div>
+      <h3>Кроссплатформенность</h3>
+      <p>Windows, Linux, macOS &mdash; любая ОС с современным браузером. Gateway работает как на Windows, так и на Linux (Python).</p>
+    </div>
+    <div class="adv-card reveal">
+      <div class="adv-num">03</div>
+      <h3>IEC 61850 out of the box</h3>
+      <p>Полная поддержка MMS, GOOSE и Sampled Values. Встроенный эмулятор for разработки без реального оборудования.</p>
+    </div>
+    <div class="adv-card reveal">
+      <div class="adv-num">04</div>
+      <h3>Оффлайн-режим</h3>
+      <p>Offline-сборка (~1.1 МБ) работает без интернета. Полная автономность for fromолированных промышленных сетей.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="cta-content reveal">
+    <h2>Готовы попробовать BitSCADA?</h2>
+    <p>Запросите демо-версию or получите консультацию по внедрению SCADA-системы на вашем предприятии.</p>
+    <div class="hero-actions">
+      <a href="mailto:scada@atwai.ru?subject=Запрос демо BitSCADA" class="btn-primary">&#128231; Request демо</a>
+      <a href="tel:+74951084804" class="btn-secondary">&#128222; Позвонить</a>
+    </div>
+    <div class="cta-contacts">
+      <a href="mailto:scada@atwai.ru" class="cta-contact">
+        <div class="cta-contact-icon">&#128231;</div>
+        scada@atwai.ru
+      </a>
+      <a href="tel:+74951084804" class="cta-contact">
+        <div class="cta-contact-icon">&#128222;</div>
+        +7 (495) 108-48-04
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">
+    &copy; 2026 BitSCADA &mdash; ATW Technologies. All rights reserved.<br>
+    <span style="font-size:11px;color:var(--text-dim);opacity:0.7">Подана заявка на регистрацию в Реестр российского ПО (Минцифры)</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:scada@atwai.ru?subject=Support BitSCADA">Support</a>
+    <a href="https://atwai.ru" target="_blank">atwai.ru</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Burger menu
+document.getElementById('burger').addEventListener('click', () => {
+  const links = document.querySelectorAll('.nav-links');
+  links.forEach(l => l.classList.toggle('open'));
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');  document.body.style.overflow = "";
+}
+</script>
+</body>
+</html>
