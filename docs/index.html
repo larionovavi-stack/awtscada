@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitSCADA IEC 61850 — Документация</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>&#9889;</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #060a12;
+  --bg-sidebar: #0a0f1a;
+  --bg-card: #0f1729;
+  --bg-code: #0b1222;
+  --accent: #00e8a8;
+  --accent-blue: #4da6ff;
+  --accent-purple: #b070ff;
+  --accent-orange: #ff6b35;
+  --accent-yellow: #ffd700;
+  --text: #e0e8f4;
+  --text-sec: #8899b4;
+  --text-dim: #4a5a74;
+  --border: #1a2438;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  display: flex; min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+  background: var(--bg-sidebar); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 24px 0; z-index: 100;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
+.sidebar-logo {
+  padding: 0 24px; margin-bottom: 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--text);
+}
+.sidebar-logo span {
+  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.sidebar-label {
+  padding: 8px 24px; font-size: 10px; font-weight: 700;
+  color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.15em;
+}
+.sidebar a {
+  display: block; padding: 7px 24px 7px 32px; font-size: 13px;
+  color: var(--text-sec); text-decoration: none; transition: all 0.2s;
+  border-left: 2px solid transparent;
+}
+.sidebar a:hover { color: var(--accent); background: rgba(0,232,168,0.04); border-left-color: rgba(0,232,168,0.3); }
+.sidebar a.active { color: var(--accent); background: rgba(0,232,168,0.06); border-left-color: var(--accent); font-weight: 600; }
+.sidebar a.sub { padding-left: 48px; font-size: 12px; }
+
+/* MAIN */
+.main {
+  margin-left: 280px; flex: 1; max-width: 860px;
+  padding: 48px 56px 120px;
+}
+
+/* TOPBAR MOBILE */
+.topbar {
+  display: none; position: fixed; top: 0; left: 0; right: 0; height: 56px;
+  background: rgba(6,10,18,0.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border); z-index: 200;
+  padding: 0 20px; align-items: center; justify-content: space-between;
+}
+.topbar-title { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 16px; }
+.topbar-btn { background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; padding: 4px; }
+
+/* CONTENT */
+h1 {
+  font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em;
+  margin-bottom: 8px; line-height: 1.2;
+}
+h1 + .subtitle { color: var(--text-sec); font-size: 16px; margin-bottom: 40px; }
+
+h2 {
+  font-size: 1.5rem; font-weight: 800; margin-top: 56px; margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  letter-spacing: -0.02em; scroll-margin-top: 80px;
+}
+h3 {
+  font-size: 1.1rem; font-weight: 700; margin-top: 32px; margin-bottom: 12px;
+  color: var(--accent); scroll-margin-top: 80px;
+}
+h4 { font-size: 0.95rem; font-weight: 600; margin-top: 24px; margin-bottom: 8px; }
+
+p { margin-bottom: 16px; }
+ul, ol { margin-bottom: 16px; padding-left: 24px; }
+li { margin-bottom: 6px; }
+strong { font-weight: 700; }
+
+a { color: var(--accent-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* CARDS */
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; margin-bottom: 20px;
+}
+.card-title {
+  font-size: 14px; font-weight: 700; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.card-title .tag {
+  font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tag-green { background: rgba(0,232,168,0.1); color: var(--accent); border: 1px solid rgba(0,232,168,0.2); }
+.tag-blue { background: rgba(77,166,255,0.1); color: var(--accent-blue); border: 1px solid rgba(77,166,255,0.2); }
+.tag-orange { background: rgba(255,107,53,0.1); color: var(--accent-orange); border: 1px solid rgba(255,107,53,0.2); }
+.tag-purple { background: rgba(176,112,255,0.1); color: var(--accent-purple); border: 1px solid rgba(176,112,255,0.2); }
+
+/* CODE */
+code {
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  background: var(--bg-code); padding: 2px 6px; border-radius: 4px;
+  border: 1px solid var(--border); color: var(--accent);
+}
+pre {
+  background: var(--bg-code); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px; margin-bottom: 20px;
+  overflow-x: auto; font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; line-height: 1.6;
+}
+pre code { background: none; border: none; padding: 0; }
+.cmd { color: var(--accent); }
+.comment { color: var(--text-dim); }
+.str { color: var(--accent-orange); }
+.num { color: var(--accent-purple); }
+
+/* TABLE */
+table {
+  width: 100%; border-collapse: collapse; margin-bottom: 20px;
+  font-size: 14px;
+}
+th, td {
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--text-dim);
+  background: var(--bg-card);
+}
+td { color: var(--text-sec); }
+tr:hover td { background: rgba(0,232,168,0.02); }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px; text-align: center;
+}
+.stat-num {
+  font-size: 2rem; font-weight: 900; font-family: 'JetBrains Mono', monospace;
+  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+/* CALLOUT */
+.callout {
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 20px;
+  font-size: 14px; display: flex; gap: 12px;
+}
+.callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.callout-info { background: rgba(77,166,255,0.06); border: 1px solid rgba(77,166,255,0.15); }
+.callout-warn { background: rgba(255,215,0,0.06); border: 1px solid rgba(255,215,0,0.15); }
+.callout-success { background: rgba(0,232,168,0.06); border: 1px solid rgba(0,232,168,0.15); }
+.callout-danger { background: rgba(255,48,80,0.06); border: 1px solid rgba(255,48,80,0.15); }
+
+/* STEP */
+.steps { counter-reset: step; margin-bottom: 24px; }
+.step {
+  counter-increment: step; position: relative;
+  padding: 16px 16px 16px 52px; margin-bottom: 12px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.step::before {
+  content: counter(step); position: absolute; left: 16px; top: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(0,232,168,0.1); border: 1px solid rgba(0,232,168,0.25);
+  color: var(--accent); font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* KEYBOARD */
+kbd {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 4px; padding: 2px 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* DOWNLOAD */
+.download-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; border-radius: 10px; font-size: 14px; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #00c492);
+  color: #060a12; text-decoration: none; transition: all 0.3s;
+  margin-bottom: 20px;
+}
+.download-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,232,168,0.3); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .sidebar.open { display: block; width: 100%; z-index: 300; }
+  .main { margin-left: 0; padding: 72px 20px 80px; }
+  .topbar { display: flex; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* PRINT */
+@media print {
+  .sidebar, .topbar { display: none !important; }
+  .main { margin-left: 0; max-width: 100%; padding: 20px; }
+  body { background: white; color: black; }
+  .card, pre, .callout, .step, .stat-card { border-color: #ccc; background: #f9f9f9; }
+  h2 { border-bottom-color: #ccc; }
+  code { background: #eee; color: #333; border-color: #ccc; }
+  .stat-num { color: #1a8; -webkit-text-fill-color: initial; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <a href="../" class="sidebar-logo"><span>BitSCADA</span>&nbsp;Docs</a>
+
+  <div class="sidebar-label">Начало работы</div>
+  <a href="#overview">Обзор системы</a>
+  <a href="#requirements">Системные требования</a>
+  <a href="#install">Установка</a>
+  <a href="#quickstart">Быстрый старт</a>
+
+  <div class="sidebar-label">Редактор</div>
+  <a href="#editor">Графический редактор</a>
+  <a href="#blocks">Функциональные блоки</a>
+  <a href="#shapes">Графические элементы</a>
+  <a href="#wires">Соединения (провода)</a>
+  <a href="#pages">Многостраничность</a>
+  <a href="#popups">Попапы</a>
+
+  <div class="sidebar-label">Runtime</div>
+  <a href="#runtime">Среда исполнения</a>
+  <a href="#trends">Тренды и архив</a>
+  <a href="#alarms">Звуковые оповещения</a>
+
+  <div class="sidebar-label">Протоколы</div>
+  <a href="#protocols">Обзор протоколов</a>
+  <a href="#iec61850">IEC 61850 (MMS/GOOSE/SV)</a>
+  <a href="#opcua">OPC UA</a>
+  <a href="#modbus">Modbus TCP</a>
+  <a href="#opcda">OPC DA / InTouch / WinCC</a>
+
+  <div class="sidebar-label">Gateway</div>
+  <a href="#gateway">SCADA Gateway</a>
+  <a href="#dashboard">Dashboard</a>
+  <a href="#database">База данных</a>
+  <a href="#users">Пользователи и роли</a>
+  <a href="#api">REST API</a>
+
+  <div class="sidebar-label">Эксплуатация</div>
+  <a href="#projects">Проекты (сохранение)</a>
+  <a href="#settings">Настройки</a>
+  <a href="#real-hw">Реальное оборудование</a>
+  <a href="#backup">Резервное копирование</a>
+  <a href="#troubleshoot">Устранение неполадок</a>
+
+  <div class="sidebar-label">Дополнительно</div>
+  <a href="#security">Безопасность</a>
+  <a href="#license">Лицензирование</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<!-- TOPBAR MOBILE -->
+<div class="topbar">
+  <button class="topbar-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">&#9776;</button>
+  <span class="topbar-title">BitSCADA Docs</span>
+  <a href="../" style="color:var(--accent);font-size:14px;text-decoration:none;">&#8592; Сайт</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>BitSCADA IEC 61850 v8</h1>
+<p class="subtitle">Полное руководство пользователя</p>
+
+<div class="grid-3">
+  <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">Функц. блока</div></div>
+  <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Протоколов</div></div>
+  <div class="stat-card"><div class="stat-num">65</div><div class="stat-label">Граф. элементов</div></div>
+</div>
+
+<a href="../BitSCADA_Demo.zip" class="download-btn" download>&#11015; Скачать демо-версию (20 МБ)</a>
+
+<!-- =================== OVERVIEW =================== -->
+<h2 id="overview">Обзор системы</h2>
+
+<p><strong>BitSCADA</strong> — браузерная SCADA-система промышленного уровня для диспетчерского управления и сбора данных. Визуализация технологических процессов, сбор данных с контроллеров, управление исполнительными механизмами, архивирование и оповещение.</p>
+
+<div class="card">
+  <div class="card-title">Состав поставки</div>
+  <table>
+    <tr><th>Файл</th><th>Размер</th><th>Назначение</th></tr>
+    <tr><td><code>SCADA_IEC61850_v8.html</code></td><td>~240 КБ</td><td>Клиентская часть (SCADA)</td></tr>
+    <tr><td><code>SCADA_Gateway.exe</code></td><td>~25 МБ</td><td>Серверная часть (Gateway + Emulator)</td></tr>
+  </table>
+  <p style="margin:0;font-size:13px;color:var(--text-dim)">Установка дополнительных программ не требуется. Подключение к интернету не требуется.</p>
+</div>
+
+<div class="callout callout-success">
+  <div class="callout-icon">&#9889;</div>
+  <div><strong>99% собственного кода.</strong> Внешние зависимости &mdash; только React 18 и Babel (загружаются с CDN). Offline-сборка полностью автономна.</div>
+</div>
+
+<!-- =================== REQUIREMENTS =================== -->
+<h2 id="requirements">Системные требования</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Минимальные <span class="tag tag-orange">MIN</span></div>
+    <ul style="margin:0">
+      <li>Процессор: x86-64, 2 ядра</li>
+      <li>Память: 2 ГБ</li>
+      <li>Диск: 50 МБ</li>
+      <li>Браузер: Chrome/Firefox/Edge</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">Рекомендуемые <span class="tag tag-green">REC</span></div>
+    <ul style="margin:0">
+      <li>Процессор: x86-64, 4 ядра</li>
+      <li>Память: 4 ГБ</li>
+      <li>Диск: 500 МБ (с БД на 30 дней)</li>
+      <li>Chrome актуальной версии</li>
+    </ul>
+  </div>
+</div>
+
+<table>
+  <tr><th>Компонент</th><th>Требование</th></tr>
+  <tr><td>ОС</td><td>Windows 7/10/11, Linux, macOS</td></tr>
+  <tr><td>Браузер</td><td>Chrome 90+, Firefox 90+, Edge 90+</td></tr>
+  <tr><td>Python (только для .py)</td><td>3.11</td></tr>
+  <tr><td>Python (для .exe)</td><td>Не требуется</td></tr>
+  <tr><td>Сеть</td><td>Не требуется (localhost)</td></tr>
+</table>
+
+<!-- =================== INSTALL =================== -->
+<h2 id="install">Установка</h2>
+
+<div class="callout callout-info">
+  <div class="callout-icon">&#128204;</div>
+  <div>Установка не требуется. Скопируйте два файла в любую папку.</div>
+</div>
+
+<div class="steps">
+  <div class="step">
+    Скачайте <a href="../BitSCADA_Demo.zip">BitSCADA_Demo.zip</a> и распакуйте в любую папку, например <code>C:\BitSCADA\</code>
+  </div>
+  <div class="step">
+    В папке должны быть: <code>SCADA_IEC61850_v8.html</code> (или offline-версия), <code>SCADA_Gateway.exe</code> и демонстрационный проект <code>.json</code>
+  </div>
+  <div class="step">
+    Установка завершена. Права администратора не требуются.
+  </div>
+</div>
+
+<h3>Автозагрузка Gateway (рекомендуется)</h3>
+<p>Для автоматического запуска Gateway при включении компьютера:</p>
+<pre><code><span class="comment"># Откройте папку автозагрузки</span>
+Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
+<span class="comment"># Вставьте ярлык SCADA_Gateway.exe</span></code></pre>
+
+<!-- =================== QUICKSTART =================== -->
+<h2 id="quickstart">Быстрый старт</h2>
+
+<div class="steps">
+  <div class="step">
+    <strong>Запустите Gateway</strong> &mdash; двойной клик на <code>SCADA_Gateway.exe</code>. Дождитесь сообщения <code>All servers running!</code> в консоли. Окно не закрывайте.
+  </div>
+  <div class="step">
+    <strong>Откройте SCADA</strong> &mdash; двойной клик на <code>SCADA_IEC61850_v8.html</code>. Браузер откроется автоматически.
+  </div>
+  <div class="step">
+    <strong>Проверьте подключение</strong> &mdash; в заголовке должна быть зелёная точка <strong>GW</strong>. В консоли Gateway: <code>Config received from SCADA</code>.
+  </div>
+  <div class="step">
+    <strong>Запустите Runtime</strong> &mdash; нажмите кнопку <strong>Runtime</strong> в заголовке. Приборы покажут изменяющиеся значения от эмулятора.
+  </div>
+</div>
+
+<div class="callout callout-success">
+  <div class="callout-icon">&#9989;</div>
+  <div>Если приборы показывают данные &mdash; система работает! Dashboard Gateway доступен на <code>http://localhost:8088</code></div>
+</div>
+
+<!-- =================== EDITOR =================== -->
+<h2 id="editor">Графический редактор</h2>
+
+<p>Редактор открывается по умолчанию. Здесь создаются проекты SCADA:</p>
+
+<div class="card">
+  <div class="card-title">Основные операции</div>
+  <table>
+    <tr><th>Действие</th><th>Как</th></tr>
+    <tr><td>Добавить блок/фигуру</td><td>Перетащить из палитры слева</td></tr>
+    <tr><td>Выделить</td><td>Клик по элементу</td></tr>
+    <tr><td>Множественное выделение</td><td><kbd>Ctrl</kbd> + клик</td></tr>
+    <tr><td>Соединить провод</td><td>Клик на выходной порт &rarr; клик на входной</td></tr>
+    <tr><td>Масштаб</td><td>Колесо мыши (0.2x &ndash; 3x)</td></tr>
+    <tr><td>Панорама</td><td>Средняя кнопка мыши или <kbd>Shift</kbd> + ЛКМ</td></tr>
+    <tr><td>Удалить</td><td><kbd>Delete</kbd></td></tr>
+    <tr><td>Сохранить</td><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td></tr>
+    <tr><td>Автораскладка</td><td>Кнопка &#9889; в заголовке</td></tr>
+    <tr><td>Контекстное меню</td><td>Правый клик: удалить, дублировать, слой</td></tr>
+  </table>
+</div>
+
+<p><strong>Панель свойств</strong> (справа, 280px) &mdash; настройки выбранного блока: имя, параметры, привязки.</p>
+<p><strong>Debug-панель</strong> (снизу, 56px) &mdash; лог событий. Скрыта в Runtime.</p>
+
+<!-- =================== BLOCKS =================== -->
+<h2 id="blocks">Функциональные блоки (53)</h2>
+
+<h3>Входы (12)</h3>
+<table>
+  <tr><th>Блок</th><th>Выходы</th><th>Описание</th></tr>
+  <tr><td>Аналоговый вход</td><td>v</td><td>Эмуляция аналогового сигнала (синус)</td></tr>
+  <tr><td>Дискретный вход</td><td>v</td><td>Дискретный сигнал 0/1</td></tr>
+  <tr><td>Константа</td><td>v</td><td>Постоянное значение</td></tr>
+  <tr><td>Генератор</td><td>v</td><td>Синус, прямоугольник, пила, треугольник, рампа, случайный</td></tr>
+  <tr><td>OPC UA Read</td><td>v, q</td><td>Чтение переменных IEC 62541</td></tr>
+  <tr><td>Modbus Read</td><td>v, ok</td><td>Чтение регистров Modbus TCP (FC 3/4)</td></tr>
+  <tr><td>MMS Read</td><td>v, q</td><td>Чтение переменных IEC 61850-8-1</td></tr>
+  <tr><td>GOOSE Sub</td><td>v, st</td><td>Подписка GOOSE IEC 61850-8-1</td></tr>
+  <tr><td>SV Sub</td><td>ia, ib, ic</td><td>Sampled Values IEC 61850-9-2 (3 фазы)</td></tr>
+  <tr><td>OPC DA Read</td><td>v, q</td><td>Чтение через OpenOPC/DCOM</td></tr>
+  <tr><td>InTouch Read</td><td>v, q</td><td>Чтение Wonderware InTouch</td></tr>
+  <tr><td>WinCC Read</td><td>v, q</td><td>Чтение Siemens WinCC</td></tr>
+</table>
+
+<h3>Логика (9)</h3>
+<table>
+  <tr><th>Блок</th><th>Входы &rarr; Выходы</th><th>Описание</th></tr>
+  <tr><td>AND</td><td>a, b &rarr; q</td><td>Логическое И</td></tr>
+  <tr><td>OR</td><td>a, b &rarr; q</td><td>Логическое ИЛИ</td></tr>
+  <tr><td>NOT</td><td>a &rarr; q</td><td>Логическое НЕ</td></tr>
+  <tr><td>XOR</td><td>a, b &rarr; q</td><td>Исключающее ИЛИ</td></tr>
+  <tr><td>Компаратор</td><td>a, b &rarr; gt, eq, lt</td><td>Сравнение: больше, равно, меньше</td></tr>
+  <tr><td>TON</td><td>en &rarr; q, et</td><td>Таймер задержки включения</td></tr>
+  <tr><td>Счётчик</td><td>pu, rst &rarr; cv, q</td><td>Счётчик импульсов с пресетом</td></tr>
+  <tr><td>MUX</td><td>a, b, sel &rarr; q</td><td>Мультиплексор</td></tr>
+  <tr><td>SR</td><td>s, r &rarr; q</td><td>SR-триггер</td></tr>
+</table>
+
+<h3>Вычисления (7)</h3>
+<table>
+  <tr><th>Блок</th><th>Входы &rarr; Выходы</th><th>Описание</th></tr>
+  <tr><td>Мат. операция</td><td>a, b &rarr; r</td><td>+, &minus;, &times;, &divide;, pow, min, max</td></tr>
+  <tr><td>Масштаб</td><td>v &rarr; r</td><td>Линейное масштабирование диапазона</td></tr>
+  <tr><td>ПИД-регулятор</td><td>pv, sp &rarr; out, err</td><td>PID с Kp и ограничением выхода</td></tr>
+  <tr><td>Формула</td><td>x, y &rarr; r</td><td>Произвольная формула (sin, cos, sqrt, PI)</td></tr>
+  <tr><td>Фильтр</td><td>v &rarr; r</td><td>Экспоненциальный фильтр НЧ</td></tr>
+  <tr><td>RMS</td><td>v &rarr; r</td><td>Среднеквадратичное значение</td></tr>
+  <tr><td>Ограничитель</td><td>v &rarr; r</td><td>Ограничение диапазона lo/hi</td></tr>
+</table>
+
+<h3>Программы (5)</h3>
+<table>
+  <tr><th>Блок</th><th>Описание</th></tr>
+  <tr><td>Скрипт</td><td>Произвольный JavaScript (i1, i2 &rarr; o1, o2)</td></tr>
+  <tr><td>SQL Запись</td><td>Запись значения в журнал SQLite</td></tr>
+  <tr><td>SQL Чтение</td><td>Чтение последнего значения из трендов</td></tr>
+  <tr><td>Запись в БД</td><td>Автоклассификация: &gt;80=авария, &gt;60=предупреждение</td></tr>
+  <tr><td>Авто-печать</td><td>Автоматическая печать отчёта</td></tr>
+</table>
+
+<h3>Выходы (10)</h3>
+<table>
+  <tr><th>Блок</th><th>Описание</th></tr>
+  <tr><td>Аналоговый / Дискретный выход</td><td>Простой выход</td></tr>
+  <tr><td>OPC UA / Modbus / MMS Write</td><td>Запись по протоколу</td></tr>
+  <tr><td>GOOSE Pub</td><td>Публикация GOOSE-события (d1, d2)</td></tr>
+  <tr><td>OPC DA / InTouch / WinCC Write</td><td>Запись через OPC DA</td></tr>
+  <tr><td>Звуковое оповещение</td><td>WebAudio: alarm/warn/info/siren + свой URL</td></tr>
+</table>
+
+<h3>Дисплеи (10 &mdash; видны в Runtime)</h3>
+<table>
+  <tr><th>Блок</th><th>Описание</th></tr>
+  <tr><td>Стрелочный прибор</td><td>SVG 270&deg; дуга, авто-цвет по порогам</td></tr>
+  <tr><td>Числовой индикатор</td><td>Цифровое значение с единицами</td></tr>
+  <tr><td>Бар-график</td><td>Вертикальная шкала с заливкой</td></tr>
+  <tr><td>Индикатор</td><td>Круглый, вкл/выкл по порогу</td></tr>
+  <tr><td>Тренд</td><td>3 канала, курсор, архив, PNG, печать</td></tr>
+  <tr><td>Слайдер</td><td>Ползунок управления оператором</td></tr>
+  <tr><td>Кнопка</td><td>Toggle 0/1</td></tr>
+  <tr><td>Текст</td><td>Подстановка значений</td></tr>
+  <tr><td>Панель аварий</td><td>4 канала с цветовой индикацией</td></tr>
+  <tr><td>Журнал</td><td>Последние события оператора</td></tr>
+</table>
+
+<!-- =================== SHAPES =================== -->
+<h2 id="shapes">Графические элементы (65)</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Оборудование <span class="tag tag-green">33</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Насосы, задвижки, клапаны, двигатели, ЧРП, вентиляторы, компрессоры, нагреватели, охладители, теплообменники, фильтры, миксеры, конвейеры, мешалки, шиберы, шнеки, печи, факельная труба и другие</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Ёмкости <span class="tag tag-blue">10</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Баки, цилиндрические ёмкости, горизонтальные ёмкости, дренажные ёмкости, приямки, сепараторы, бункеры, колонны</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Электрооборудование <span class="tag tag-purple">5</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Выключатели, контакторы, трансформаторы, предохранители, заземление</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Индикаторы <span class="tag tag-orange">7</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">LED (зелёный, красный, жёлтый), лампа, сирена, светофор, пламя/факел</p>
+  </div>
+</div>
+
+<p><strong>Трубопроводы</strong> (5): труба Г, труба В, тройник, колено, редуктор.<br>
+<strong>Примитивы</strong> (5): линия, прямоугольник, круг, текст, многоугольник.</p>
+
+<div class="callout callout-info">
+  <div class="callout-icon">&#127912;</div>
+  <div>Все графические элементы привязываются к сигналам &mdash; цвет и анимация меняются в Runtime по значению переменной.</div>
+</div>
+
+<!-- =================== WIRES =================== -->
+<h2 id="wires">Соединения (провода)</h2>
+<p>Соединения создаются кликом на <strong>выходной порт</strong> блока (справа), затем кликом на <strong>входной порт</strong> другого блока (слева). Провода рисуются как Bezier-кривые.</p>
+<ul>
+  <li>Порты входов &mdash; слева блока</li>
+  <li>Порты выходов &mdash; справа блока</li>
+  <li>Удаление провода &mdash; выделить + <kbd>Delete</kbd></li>
+</ul>
+
+<!-- =================== PAGES =================== -->
+<h2 id="pages">Многостраничность</h2>
+<p>Проект может содержать основную страницу и произвольное количество дополнительных:</p>
+<ul>
+  <li>Кнопка <strong>+</strong> в заголовке &mdash; добавить страницу</li>
+  <li>Вкладки &mdash; переключение между страницами</li>
+  <li>Каждая страница имеет свой набор блоков и фигур</li>
+</ul>
+
+<!-- =================== POPUPS =================== -->
+<h2 id="popups">Попапы</h2>
+<p>Попапы &mdash; страницы, открывающиеся как модальные окна в Runtime при клике на оборудование. Используются для детального отображения параметров узла.</p>
+
+<!-- =================== RUNTIME =================== -->
+<h2 id="runtime">Среда исполнения (Runtime)</h2>
+
+<p>Переключение: кнопка <strong>Runtime</strong> в заголовке.</p>
+
+<div class="card">
+  <div class="card-title">Возможности Runtime</div>
+  <ul style="margin:0">
+    <li>Цикл обновления: <strong>50&ndash;1000 мс</strong> (по умолчанию 100 мс)</li>
+    <li>Отображаются только дисплеи и графика (логика скрыта)</li>
+    <li>Полноэкранный режим &mdash; <kbd>F11</kbd></li>
+    <li>Защита доступа к редактору логином/паролем</li>
+    <li>Автозапуск Runtime при загрузке (опция)</li>
+    <li>Журнал оператора с метками времени</li>
+    <li>Управление слайдерами и кнопками</li>
+    <li>Клик по оборудованию &rarr; попап с деталями</li>
+  </ul>
+</div>
+
+<!-- =================== TRENDS =================== -->
+<h2 id="trends">Тренды и архив</h2>
+
+<p>Блок <strong>Тренд</strong> поддерживает 3 канала с настраиваемыми цветами и именами. Буфер реального времени &mdash; 200 точек.</p>
+
+<h4>Просмотр архива</h4>
+<div class="steps">
+  <div class="step">Нажмите <strong>подробнее</strong> на тренде</div>
+  <div class="step">Выберите тег из выпадающего списка</div>
+  <div class="step">Нажмите период: <strong>1ч, 2ч, 6ч, 12ч, 24ч</strong></div>
+  <div class="step">Сохраните в PNG или распечатайте</div>
+</div>
+
+<!-- =================== ALARMS =================== -->
+<h2 id="alarms">Звуковые оповещения</h2>
+
+<p>Блок <strong>Звуковое оповещение</strong> генерирует звук через WebAudio API:</p>
+
+<table>
+  <tr><th>Тип</th><th>Частота</th><th>Характер</th></tr>
+  <tr><td>Предупреждение</td><td>660 Гц</td><td>Мягкий тон</td></tr>
+  <tr><td>Авария</td><td>880/440 Гц</td><td>Резкий прерывистый</td></tr>
+  <tr><td>Информация</td><td>520 Гц</td><td>Короткий щелчок</td></tr>
+  <tr><td>Сирена</td><td>600/900 Гц</td><td>Восходящий/нисходящий вой</td></tr>
+  <tr><td>Свой звук</td><td>&mdash;</td><td>URL mp3/wav файла</td></tr>
+</table>
+
+<!-- =================== PROTOCOLS =================== -->
+<h2 id="protocols">Обзор протоколов (9)</h2>
+
+<table>
+  <tr><th>Протокол</th><th>Стандарт</th><th>Режим</th><th>Библиотека</th></tr>
+  <tr><td>MMS</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
+  <tr><td>GOOSE</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
+  <tr><td>SV</td><td>IEC 61850-9-2</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
+  <tr><td>OPC UA</td><td>IEC 62541</td><td>REAL / EMU</td><td>asyncua</td></tr>
+  <tr><td>Modbus TCP</td><td>Standard</td><td>REAL / EMU</td><td>pymodbus</td></tr>
+  <tr><td>OPC DA</td><td>DCOM</td><td>REAL / EMU</td><td>OpenOPC</td></tr>
+  <tr><td>InTouch</td><td>Wonderware</td><td>REAL / EMU</td><td>OPC DA</td></tr>
+  <tr><td>WinCC</td><td>Siemens</td><td>REAL / EMU</td><td>OPC DA</td></tr>
+  <tr><td>SQL</td><td>SQLite</td><td>REAL</td><td>sqlite3</td></tr>
+</table>
+
+<!-- =================== IEC61850 =================== -->
+<h2 id="iec61850">IEC 61850 (MMS / GOOSE / SV)</h2>
+
+<div class="grid-3">
+  <div class="card">
+    <div class="card-title">MMS <span class="tag tag-green">:102</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Чтение/запись переменных IED. Управление и мониторинг.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">GOOSE <span class="tag tag-blue">multicast</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Быстрая передача событий (4 мс). Защитная автоматика.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">SV <span class="tag tag-purple">multicast</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Мгновенные значения токов трёх фаз. Цифровые подстанции.</p>
+  </div>
+</div>
+
+<!-- =================== OPCUA =================== -->
+<h2 id="opcua">OPC UA</h2>
+<p>OPC UA (IEC 62541) &mdash; универсальный доступ к данным. Gateway запускает сервер на <code>opc.tcp://hostname:4840</code>.</p>
+<p>Настройки: SCADA &rarr; Настройки &rarr; OPC UA &rarr; endpoint, порт, режим безопасности.</p>
+
+<!-- =================== MODBUS =================== -->
+<h2 id="modbus">Modbus TCP</h2>
+<p>Стандартный промышленный протокол. Gateway: порт <code>502</code> (или <code>1502</code> если занят). Поддерживает функции: FC 3 (Read Holding), FC 4 (Read Input), FC 6 (Write Single), FC 16 (Write Multiple).</p>
+
+<!-- =================== OPCDA =================== -->
+<h2 id="opcda">OPC DA / InTouch / WinCC</h2>
+<p>OPC DA Classic через DCOM. Требуется Windows. Поддержка Kepware, Wonderware InTouch (<code>Wonderware.InTouch.OPCServer</code>), Siemens WinCC (<code>OPCServer.WinCC</code>).</p>
+
+<!-- =================== GATEWAY =================== -->
+<h2 id="gateway">SCADA Gateway</h2>
+
+<p>Gateway &mdash; серверная часть системы. 12 параллельных потоков обработки протоколов.</p>
+
+<div class="card">
+  <div class="card-title">Потоки Gateway</div>
+  <table>
+    <tr><th>Поток</th><th>Порт</th><th>Назначение</th></tr>
+    <tr><td>HTTP Dashboard</td><td>8088</td><td>Веб-панель управления</td></tr>
+    <tr><td>WebSocket Bridge</td><td>8089</td><td>Связь со SCADA</td></tr>
+    <tr><td>OPC UA Server</td><td>4840</td><td>Эмуляция OPC UA</td></tr>
+    <tr><td>Modbus TCP Server</td><td>502</td><td>Modbus эмулятор</td></tr>
+    <tr><td>MMS Server</td><td>102</td><td>MMS эмулятор</td></tr>
+    <tr><td>GOOSE Publisher</td><td>239.0.0.1:61850</td><td>Multicast GOOSE</td></tr>
+    <tr><td>SV Publisher</td><td>239.0.0.2:61851</td><td>Multicast SV</td></tr>
+    <tr><td>Эмулятор</td><td>&mdash;</td><td>Генерация данных</td></tr>
+    <tr><td>OPC UA Client</td><td>&mdash;</td><td>Реальное оборудование</td></tr>
+    <tr><td>Modbus Client</td><td>&mdash;</td><td>Реальные PLC</td></tr>
+    <tr><td>OPC DA Client</td><td>&mdash;</td><td>Kepware/InTouch/WinCC</td></tr>
+    <tr><td>SQL Engine</td><td>&mdash;</td><td>SQLite: журнал, тренды</td></tr>
+  </table>
+</div>
+
+<!-- =================== DASHBOARD =================== -->
+<h2 id="dashboard">Dashboard (6 вкладок)</h2>
+
+<p>Доступ: <code>http://localhost:8088</code></p>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Статус</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Карточки 9 протоколов, EMU/REAL, операции R/W, подключённые проекты, верификация</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Подключение</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Адреса всех endpoints: WebSocket, OPC UA, Modbus, MMS, REST API</p>
+  </div>
+  <div class="card">
+    <div class="card-title">База данных</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Скользящее окно, макс. записей, статистика, очистка, последние 50 записей</p>
+  </div>
+  <div class="card">
+    <div class="card-title">OPC Браузер</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Дерево OPC UA и OPC DA с текущими значениями тегов</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Пользователи</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">CRUD, 3 роли: Оператор, Инженер, Админ. Пароли SHA256</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Журнал</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Полный лог событий с цветовой индикацией уровней</p>
+  </div>
+</div>
+
+<!-- =================== DATABASE =================== -->
+<h2 id="database">База данных (SQLite)</h2>
+
+<p>Файл: <code>scada_journal.db</code> (создаётся автоматически рядом с Gateway).</p>
+
+<table>
+  <tr><th>Таблица</th><th>Назначение</th></tr>
+  <tr><td>journal</td><td>Журнал: время, источник, уровень, тег, значение, сообщение</td></tr>
+  <tr><td>trends</td><td>Тренды: время, тег, значение (запись каждые 5 сек)</td></tr>
+  <tr><td>alarms</td><td>Аварии: начало, конец, тег, уровень, сообщение, квитирование</td></tr>
+  <tr><td>users</td><td>Пользователи: имя, роль, SHA256 пароль, дата</td></tr>
+</table>
+
+<p>Хранение: скользящее окно 30 дней, макс. 100 000 записей. Объём: ~2 МБ/сутки.</p>
+
+<!-- =================== USERS =================== -->
+<h2 id="users">Пользователи и роли</h2>
+
+<table>
+  <tr><th>Роль</th><th>Права</th></tr>
+  <tr><td><strong>Оператор</strong></td><td>Runtime, просмотр</td></tr>
+  <tr><td><strong>Инженер</strong></td><td>+ Редактор, настройки</td></tr>
+  <tr><td><strong>Админ</strong></td><td>+ Пользователи, база данных</td></tr>
+</table>
+
+<!-- =================== API =================== -->
+<h2 id="api">REST API (15 endpoints)</h2>
+
+<table>
+  <tr><th>Метод</th><th>Endpoint</th><th>Описание</th></tr>
+  <tr><td>GET</td><td><code>/api</code></td><td>Статус протоколов</td></tr>
+  <tr><td>GET</td><td><code>/api/db/stats</code></td><td>Статистика БД</td></tr>
+  <tr><td>GET</td><td><code>/api/db/last</code></td><td>Последние 50 записей</td></tr>
+  <tr><td>GET</td><td><code>/api/users</code></td><td>Список пользователей</td></tr>
+  <tr><td>GET</td><td><code>/api/opc/browse</code></td><td>Обзор OPC тегов</td></tr>
+  <tr><td>GET</td><td><code>/api/trends/history</code></td><td>Исторические тренды</td></tr>
+  <tr><td>GET</td><td><code>/api/trends/tags</code></td><td>Доступные теги</td></tr>
+  <tr><td>POST</td><td><code>/api/emu/toggle</code></td><td>EMU ON/OFF</td></tr>
+  <tr><td>POST</td><td><code>/api/config</code></td><td>Конфигурация от SCADA</td></tr>
+  <tr><td>POST</td><td><code>/api/db/clear</code></td><td>Очистка БД</td></tr>
+  <tr><td>POST</td><td><code>/api/db/cleanup</code></td><td>Удаление старых записей</td></tr>
+  <tr><td>POST</td><td><code>/api/db/config</code></td><td>Настройки хранения</td></tr>
+  <tr><td>POST</td><td><code>/api/users/add</code></td><td>Добавить пользователя</td></tr>
+  <tr><td>POST</td><td><code>/api/users/delete</code></td><td>Удалить пользователя</td></tr>
+  <tr><td>POST</td><td><code>/api/log/clear</code></td><td>Очистка журнала</td></tr>
+</table>
+
+<!-- =================== PROJECTS =================== -->
+<h2 id="projects">Проекты</h2>
+
+<table>
+  <tr><th>Действие</th><th>Как</th></tr>
+  <tr><td>Сохранить</td><td>&#128190; &rarr; ввести имя &rarr; localStorage</td></tr>
+  <tr><td>Загрузить</td><td>&#128194; &rarr; выбрать проект</td></tr>
+  <tr><td>Экспорт</td><td>&#10515; &rarr; скачать JSON</td></tr>
+  <tr><td>Импорт</td><td>&#128194; &rarr; Импорт &rarr; выбрать JSON</td></tr>
+</table>
+
+<p>Формат: JSON, включает блоки, фигуры, провода, настройки, страницы.</p>
+
+<!-- =================== SETTINGS =================== -->
+<h2 id="settings">Настройки (9 вкладок)</h2>
+
+<p>SCADA &rarr; кнопка <strong>Настройки</strong> в заголовке:</p>
+
+<table>
+  <tr><th>Вкладка</th><th>Параметры</th></tr>
+  <tr><td>Основные</td><td>Цикл (мс), автозапуск, полный экран, логин/пароль</td></tr>
+  <tr><td>OPC UA</td><td>Endpoint, порт, безопасность</td></tr>
+  <tr><td>OPC DA</td><td>DCOM сервер, ProgID</td></tr>
+  <tr><td>Modbus</td><td>TCP порт, таймаут</td></tr>
+  <tr><td>MMS</td><td>Порт, версия, TSEL, TLS</td></tr>
+  <tr><td>GOOSE</td><td>AppID, VLAN, интерфейс</td></tr>
+  <tr><td>SV</td><td>Интерфейс, частота дискретизации</td></tr>
+  <tr><td>InTouch</td><td>Сервер, Access Name</td></tr>
+  <tr><td>WinCC</td><td>Сервер, Connection</td></tr>
+</table>
+
+<!-- =================== REAL-HW =================== -->
+<h2 id="real-hw">Подключение к реальному оборудованию</h2>
+
+<div class="steps">
+  <div class="step">В SCADA &rarr; <strong>Настройки</strong> &rarr; вкладка нужного протокола &rarr; укажите адрес оборудования</div>
+  <div class="step">В Dashboard Gateway &rarr; <strong>Статус</strong> &rarr; нажмите <strong>EMU OFF</strong></div>
+  <div class="step">Gateway автоматически подключится. В статусе: <strong>REAL</strong> вместо <strong>EMU</strong></div>
+</div>
+
+<div class="callout callout-info">
+  <div class="callout-icon">&#128204;</div>
+  <div>Gateway автоматически определяет установленные библиотеки (<code>asyncua</code>, <code>pymodbus</code>, <code>OpenOPC</code>) при запуске.</div>
+</div>
+
+<!-- =================== BACKUP =================== -->
+<h2 id="backup">Резервное копирование</h2>
+
+<table>
+  <tr><th>Данные</th><th>Хранение</th><th>Резервная копия</th></tr>
+  <tr><td>Проекты SCADA</td><td>localStorage браузера</td><td>Экспорт в JSON</td></tr>
+  <tr><td>Тренды и журнал</td><td><code>scada_journal.db</code></td><td>Копировать файл</td></tr>
+  <tr><td>Настройки Gateway</td><td><code>scada_gateway.json</code></td><td>Копировать файл</td></tr>
+</table>
+
+<!-- =================== TROUBLESHOOT =================== -->
+<h2 id="troubleshoot">Устранение неполадок</h2>
+
+<div class="card" style="border-left: 3px solid var(--accent-orange);">
+  <div class="card-title">SCADA не подключается к Gateway</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Проверьте что <code>SCADA_Gateway.exe</code> запущен (строка <code>All servers running!</code>). Убедитесь что порт 8089 не блокируется антивирусом.</p>
+</div>
+
+<div class="card" style="border-left: 3px solid var(--accent-blue);">
+  <div class="card-title">Gateway: &laquo;asyncua not found&raquo;</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Нормальная ситуация для автономной поставки. Gateway работает в режиме эмуляции &mdash; все данные генерируются встроенным эмулятором.</p>
+</div>
+
+<div class="card" style="border-left: 3px solid var(--accent-orange);">
+  <div class="card-title">Приборы в Runtime не показывают значений</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Проверьте наличие зелёной точки <strong>GW</strong> в заголовке. Если отсутствует &mdash; Gateway не подключён. Нажмите Runtime повторно после запуска Gateway.</p>
+</div>
+
+<div class="card" style="border-left: 3px solid var(--accent-blue);">
+  <div class="card-title">Проект не сохраняется</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">localStorage переполнен. Удалите неиспользуемые проекты или экспортируйте в JSON.</p>
+</div>
+
+<!-- =================== SECURITY =================== -->
+<h2 id="security">Безопасность</h2>
+
+<ul>
+  <li><strong>Trial-режим:</strong> 2 часа работы с anti-tamper защитой</li>
+  <li><strong>Целостность:</strong> SHA256 хэш JSX-кода, проверка при загрузке</li>
+  <li><strong>Base64:</strong> исходный код закодирован внутри HTML</li>
+  <li><strong>Защита редактора:</strong> логин/пароль в настройках</li>
+  <li><strong>Роли:</strong> Оператор / Инженер / Админ</li>
+  <li><strong>Пароли:</strong> SHA256 хэш в SQLite</li>
+</ul>
+
+<!-- =================== LICENSE =================== -->
+<h2 id="license">Лицензирование</h2>
+
+<p>Встроенная система лицензирования без серверов активации. Каждая сборка содержит:</p>
+
+<ul>
+  <li><strong>Build ID</strong> &mdash; 16-символьный SHA256 хэш</li>
+  <li><strong>License Key</strong> &mdash; 4 группы по 8 символов (MD5)</li>
+  <li><strong>Integrity Hash</strong> &mdash; SHA256 контрольная сумма</li>
+</ul>
+
+<div class="callout callout-info">
+  <div class="callout-icon">&#128204;</div>
+  <div>Для приобретения лицензии обращайтесь: <a href="mailto:scada@atwai.ru">scada@atwai.ru</a></div>
+</div>
+
+<!-- =================== CONTACTS =================== -->
+<h2 id="contacts">Контакты</h2>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Email</div>
+    <p style="margin:0"><a href="mailto:scada@atwai.ru">scada@atwai.ru</a></p>
+  </div>
+  <div class="card">
+    <div class="card-title">Телефон</div>
+    <p style="margin:0"><a href="tel:+74951084804">+7 (495) 108-48-04</a></p>
+  </div>
+</div>
+
+<p style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-dim)">
+  &copy; 2026 BitSCADA &mdash; ATW Technologies. Все права защищены.<br>
+  Подана заявка на регистрацию в Реестр российского ПО (Минцифры).
+</p>
+
+</div>
+
+<script>
+// Sidebar active link highlight
+const sections = document.querySelectorAll('h2[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  sidebarLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// Mobile sidebar close on link click
+sidebarLinks.forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
