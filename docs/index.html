@@ -249,9 +249,9 @@ kbd {
 <nav class="sidebar" id="sidebar">
   <a href="../" class="sidebar-logo"><span>BitSCADA</span>&nbsp;Docs</a>
 
-  <div class="sidebar-label">Start работы</div>
-  <a href="#overview">Overview системы</a>
-  <a href="#requirements">Системные requirements</a>
+  <div class="sidebar-label">Start operation</div>
+  <a href="#overview">Overview system</a>
+  <a href="#requirements">System requirements</a>
   <a href="#install">Installation</a>
   <a href="#quickstart">Quick Start</a>
 
@@ -259,17 +259,17 @@ kbd {
   <a href="#editor">Graphic Editor</a>
   <a href="#blocks">Function Blocks</a>
   <a href="#shapes">Graphic Elements</a>
-  <a href="#wires">Соединения (провода)</a>
+  <a href="#wires">Connections (wires)</a>
   <a href="#pages">Multi-page</a>
-  <a href="#popups">Popupы</a>
+  <a href="#popups">Popup</a>
 
   <div class="sidebar-label">Runtime</div>
   <a href="#runtime">Runtime Environment</a>
-  <a href="#trends">Trends и архив</a>
+  <a href="#trends">Trends and archive</a>
   <a href="#alarms">Sound Alerts</a>
 
   <div class="sidebar-label">Protocols</div>
-  <a href="#protocols">Overview protocolов</a>
+  <a href="#protocols">Overview protocolin</a>
   <a href="#iec61850">IEC 61850 (MMS/GOOSE/SV)</a>
   <a href="#opcua">OPC UA</a>
   <a href="#modbus">Modbus TCP</a>
@@ -279,15 +279,15 @@ kbd {
   <a href="#gateway">SCADA Gateway</a>
   <a href="#dashboard">Dashboard</a>
   <a href="#database">Database</a>
-  <a href="#users">Пользователи и роли</a>
+  <a href="#users">Users and roles</a>
   <a href="#api">REST API</a>
 
   <div class="sidebar-label">Operation</div>
-  <a href="#projects">Projectы (сохранение)</a>
+  <a href="#projects">Project (saving)</a>
   <a href="#settings">Settings</a>
-  <a href="#real-hw">Реальное equipmentие</a>
-  <a href="#backup">Reserveное копирование</a>
-  <a href="#troubleshoot">Устранение неполадок</a>
+  <a href="#real-hw">Real equipmentand</a>
+  <a href="#backup">Reserve andinand</a>
+  <a href="#troubleshoot">Troubleshooting</a>
 
   <div class="sidebar-label">Additionally</div>
   <a href="#security">Security</a>
@@ -299,74 +299,74 @@ kbd {
 <div class="topbar">
   <button class="topbar-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">&#9776;</button>
   <span class="topbar-title">BitSCADA Docs</span>
-  <a href="../" style="color:var(--accent);font-size:14px;text-decoration:none;">&#8592; Сайт</a>
+  <a href="../" style="color:var(--accent);font-size:14px;text-decoration:none;">&#8592; Website</a>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
 <h1>BitSCADA IEC 61850 v8</h1>
-<p class="subtitle">Полное guidо userя</p>
+<p class="subtitle">Full guid user</p>
 
 <div class="grid-3">
-  <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">Функц. блока</div></div>
-  <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Протaboutв</div></div>
-  <div class="stat-card"><div class="stat-num">65</div><div class="stat-label">Graph. elementов</div></div>
+  <div class="stat-card"><div class="stat-num">53</div><div class="stat-label">. block</div></div>
+  <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">aboutin</div></div>
+  <div class="stat-card"><div class="stat-num">65</div><div class="stat-label">Graph. elementin</div></div>
 </div>
 
-<a href="../BitSCADA_Demo.zip" class="download-btn" download>&#11015; Download демо-версию (20 МБ)</a>
+<a href="../BitSCADA_Demo.zip" class="download-btn" download>&#11015; Download demo-version (20 )</a>
 
 <!-- =================== OVERVIEW =================== -->
-<h2 id="overview">Overview системы</h2>
+<h2 id="overview">Overview system</h2>
 
-<p><strong>BitSCADA</strong> — браузерная SCADA-система industrialого уровня для dispatchского controlия и сбора данных. Process visualization, сбор данных с контроллеров, controlие исfullительными механизмами, archiving и alertие.</p>
+<p><strong>BitSCADA</strong>— on SCADA-system industrial in for dispatchwith controland and with . Process visualization, with with in, controland andwithfullandand andand, archiving and alertand.</p>
 
 <div class="card">
-  <div class="card-title">Состав поставки</div>
+  <div class="card-title">Delivery contents</div>
   <table>
     <tr><th>File</th><th>Size</th><th>Assignment</th></tr>
-    <tr><td><code>SCADA_IEC61850_v8.html</code></td><td>~240 КБ</td><td>Clientская часть (SCADA)</td></tr>
-    <tr><td><code>SCADA_Gateway.exe</code></td><td>~25 МБ</td><td>Serverная часть (Gateway + Emulator)</td></tr>
+    <tr><td><code>SCADA_IEC61850_v8.html</code></td><td>~240</td><td>Clientwith with (SCADA)</td></tr>
+    <tr><td><code>SCADA_Gateway.exe</code></td><td>~25</td><td>Serveron with (Gateway + Emulator)</td></tr>
   </table>
-  <p style="margin:0;font-size:13px;color:var(--text-dim)">Installation additionalых программ не требуется. Connection к интернету не требуется.</p>
+  <p style="margin:0;font-size:13px;color:var(--text-dim)">Installation additional not required. Connection andnot not required.</p>
 </div>
 
 <div class="callout callout-success">
   <div class="callout-icon">&#9889;</div>
-  <div><strong>99% собственного кода.</strong> External dependencies &mdash; only React 18 и Babel (загружаются с CDN). Offline-сборка fullостью автономна.</div>
+  <div><strong>99% withwithin code.</strong>External dependencies &mdash; only React 18 and Babel (with with CDN). Offline-build fullwith intoneon.</div>
 </div>
 
 <!-- =================== REQUIREMENTS =================== -->
-<h2 id="requirements">Системные requirements</h2>
+<h2 id="requirements">System requirements</h2>
 
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Minimum <span class="tag tag-orange">MIN</span></div>
     <ul style="margin:0">
-      <li>Процессор: x86-64, 2 ядра</li>
-      <li>Memory: 2 ГБ</li>
-      <li>Disk: 50 МБ</li>
+      <li>Processor: x86-64, 2 cores</li>
+      <li>Memory: 2</li>
+      <li>Disk: 50</li>
       <li>Browser: Chrome/Firefox/Edge</li>
     </ul>
   </div>
   <div class="card">
-    <div class="card-title">Рекомендуемые <span class="tag tag-green">REC</span></div>
+    <div class="card-title">Recommended <span class="tag tag-green">REC</span></div>
     <ul style="margin:0">
-      <li>Процессор: x86-64, 4 ядра</li>
-      <li>Memory: 4 ГБ</li>
-      <li>Disk: 500 МБ (с БД на 30 дней)</li>
-      <li>Chrome актуальной версии</li>
+      <li>Processor: x86-64, 4 cores</li>
+      <li>Memory: 4</li>
+      <li>Disk: 500 (with on 30 not)</li>
+      <li>Chrome inwithandand</li>
     </ul>
   </div>
 </div>
 
 <table>
-  <tr><th>Component</th><th>Требование</th></tr>
-  <tr><td>ОС</td><td>Windows 7/10/11, Linux, macOS</td></tr>
+  <tr><th>Component</th><th>Requirement</th></tr>
+  <tr><td></td><td>Windows 7/10/11, Linux, macOS</td></tr>
   <tr><td>Browser</td><td>Chrome 90+, Firefox 90+, Edge 90+</td></tr>
-  <tr><td>Python (only для .py)</td><td>3.11</td></tr>
-  <tr><td>Python (для .exe)</td><td>Не требуется</td></tr>
-  <tr><td>Сеть</td><td>Не требуется (localhost)</td></tr>
+  <tr><td>Python (only for .py)</td><td>3.11</td></tr>
+  <tr><td>Python (for .exe)</td><td>Not required</td></tr>
+  <tr><td>Network</td><td>Not required (localhost)</td></tr>
 </table>
 
 <!-- =================== INSTALL =================== -->
@@ -374,24 +374,22 @@ kbd {
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>Installation не требуется. Скопируйте два файла в любую папку.</div>
+  <div>Installation not required. Copy two files to any folder.</div>
 </div>
 
 <div class="steps">
   <div class="step">
-    Download <a href="../BitSCADA_Demo.zip">BitSCADA_Demo.zip</a> и распакуйте в любую папку, наatмер <code>C:\BitSCADA\</code>
+    Download <a href="../BitSCADA_Demo.zip">BitSCADA_Demo.zip</a>and with in folder, onat<code>C:\BitSCADA\</code>
   </div>
   <div class="step">
-    The folder must contain: <code>SCADA_IEC61850_v8.html</code> (or offline-версия), <code>SCADA_Gateway.exe</code> и демонстрационный проект <code>.json</code>
+    The folder must contain: <code>SCADA_IEC61850_v8.html</code> (or offline-version), <code>SCADA_Gateway.exe</code>and demowithand<code>.json</code>
   </div>
-  <div class="step">
-    Installation finishена. Права администратора не требуются.
-  </div>
+  <div class="step">Installation finishon. Rights andandwith not with.</div>
 </div>
 
-<h3>Auto-load Gateway (рекомендуется)</h3>
-<p>For автоматического launchа Gateway at enablении компьютера:</p>
-<pre><code><span class="comment"># Open папку автоloadи</span>
+<h3>Auto-load Gateway (recommended)</h3>
+<p>For inandwith launch Gateway at enablandand :</p>
+<pre><code><span class="comment"># Open folder inloadand</span>
 Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <span class="comment"># Insert shortcut SCADA_Gateway.exe</span></code></pre>
 
@@ -400,48 +398,46 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 
 <div class="steps">
   <div class="step">
-    <strong>Run Gateway</strong> &mdash; двойной клик на <code>SCADA_Gateway.exe</code>. Wait for сообщения <code>All servers running!</code> в консоли. Window не закрывайте.
+    <strong>Run Gateway</strong> &mdash; double click on <code>SCADA_Gateway.exe</code>. Wait for messages <code>All servers running!</code>in console. Window not in.</div>
+  <div class="step">
+    <strong>Open SCADA</strong> &mdash; double click on <code>SCADA_IEC61850_v8.html</code>. Browser will open automatically.
   </div>
   <div class="step">
-    <strong>Open SCADA</strong> &mdash; двойной клик на <code>SCADA_IEC61850_v8.html</code>. Browser will open automatically.
+    <strong>Check connectand</strong>&mdash; in header on on point<strong>GW</strong>. In console Gateway: <code>Config received from SCADA</code>.
   </div>
   <div class="step">
-    <strong>Проверьте connectие</strong> &mdash; в заголовке должна быть зелёная pointа <strong>GW</strong>. In console Gateway: <code>Config received from SCADA</code>.
-  </div>
-  <div class="step">
-    <strong>Run Runtime</strong> &mdash; нажмите buttonу <strong>Runtime</strong> в заголовке. Instruments покажут changяющиеся valueия от эмулятора.
-  </div>
+    <strong>Run Runtime</strong>&mdash; click button<strong>Runtime</strong>in header. Instruments changandwith valueand emulator.</div>
 </div>
 
 <div class="callout callout-success">
   <div class="callout-icon">&#9989;</div>
-  <div>If atборы показывают данные &mdash; система operationет! Dashboard Gateway accessен на <code>http://localhost:8088</code></div>
+  <div>If at in &mdash; system operation! Dashboard Gateway access on<code>http://localhost:8088</code></div>
 </div>
 
 <!-- =================== EDITOR =================== -->
 <h2 id="editor">Graphic Editor</h2>
 
-<p>Editor открывается по умолчанию. Here создаются проекты SCADA:</p>
+<p>Editor opens by default. Here withwith SCADA:</p>
 
 <div class="card">
-  <div class="card-title">Main operatioи</div>
+  <div class="card-title">Main operatioand</div>
   <table>
     <tr><th>Action</th><th>How</th></tr>
-    <tr><td>Add блок/фигуру</td><td>Перетащить из палитры слева</td></tr>
-    <tr><td>Select</td><td>Click по elementу</td></tr>
-    <tr><td>Multiple выделение</td><td><kbd>Ctrl</kbd> + клик</td></tr>
-    <tr><td>Соединить провод</td><td>Click на выходной порт &rarr; клик на входной</td></tr>
-    <tr><td>Scale</td><td>Wheel мыши (0.2x &ndash; 3x)</td></tr>
-    <tr><td>Панорама</td><td>Средняя buttonа мыши or <kbd>Shift</kbd> + LMB</td></tr>
+    <tr><td>Add block/shape</td><td>Drag from palette on left</td></tr>
+    <tr><td>Select</td><td>Click element</td></tr>
+    <tr><td>Multiple inand</td><td><kbd>Ctrl</kbd> + click</td></tr>
+    <tr><td>Connect wire</td><td>Click on output port &rarr; click on input</td></tr>
+    <tr><td>Scale</td><td>Wheel mouse (0.2x &ndash; 3x)</td></tr>
+    <tr><td>Panorama</td><td>Average button mouse or<kbd>Shift</kbd> + LMB</td></tr>
     <tr><td>Delete</td><td><kbd>Delete</kbd></td></tr>
     <tr><td>Save</td><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td></tr>
-    <tr><td>Auto-layout</td><td>Button &#9889; в заголовке</td></tr>
-    <tr><td>Context меню</td><td>Правый клик: удалить, дублировать, слой</td></tr>
+    <tr><td>Auto-layout</td><td>Button &#9889; in header</td></tr>
+    <tr><td>Context menu</td><td>Right click: delete, andin, layer</td></tr>
   </table>
 </div>
 
-<p><strong>Panel свойств</strong> (справа, 280px) &mdash; settingи выбранного блока: имя, параметры, atвязки.</p>
-<p><strong>Debug-panel</strong> (снизу, 56px) &mdash; log eventй. Скрыта в Runtime.</p>
+<p><strong>Panel properties</strong>(right, 280px) &mdash; settingand in block: and, parameters, atinand.</p>
+<p><strong>Debug-panel</strong>(bottom, 56px) &mdash; log event. Hidden in Runtime.</p>
 
 <!-- =================== BLOCKS =================== -->
 <h2 id="blocks">Function Blocks (53)</h2>
@@ -449,79 +445,79 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <h3>Inputs (12)</h3>
 <table>
   <tr><th>Block</th><th>Outputs</th><th>Description</th></tr>
-  <tr><td>Analog вход</td><td>v</td><td>Эмуляция analogого signalа (синус)</td></tr>
-  <tr><td>Discrete вход</td><td>v</td><td>Discrete signal 0/1</td></tr>
-  <tr><td>Constant</td><td>v</td><td>Постоянное valueие</td></tr>
-  <tr><td>Generator</td><td>v</td><td>Sine, прямоangleьник, пила, треangleьник, рампа, случайный</td></tr>
-  <tr><td>OPC UA Read</td><td>v, q</td><td>Read переменных IEC 62541</td></tr>
-  <tr><td>Modbus Read</td><td>v, ok</td><td>Read registerов Modbus TCP (FC 3/4)</td></tr>
-  <tr><td>MMS Read</td><td>v, q</td><td>Read переменных IEC 61850-8-1</td></tr>
+  <tr><td>Analog input</td><td>v</td><td>Emulation analog signal (sine)</td></tr>
+  <tr><td>Discrete input</td><td>v</td><td>Discrete signal 0/1</td></tr>
+  <tr><td>Constant</td><td>v</td><td>Constant valueand</td></tr>
+  <tr><td>Generator</td><td>v</td><td>Sine, directlyangleand, sawtooth, angleand, ramp, random</td></tr>
+  <tr><td>OPC UA Read</td><td>v, q</td><td>Read variables IEC 62541</td></tr>
+  <tr><td>Modbus Read</td><td>v, ok</td><td>Read registerin Modbus TCP (FC 3/4)</td></tr>
+  <tr><td>MMS Read</td><td>v, q</td><td>Read variables IEC 61850-8-1</td></tr>
   <tr><td>GOOSE Sub</td><td>v, st</td><td>Subscription GOOSE IEC 61850-8-1</td></tr>
-  <tr><td>SV Sub</td><td>ia, ib, ic</td><td>Sampled Values IEC 61850-9-2 (3 фазы)</td></tr>
+  <tr><td>SV Sub</td><td>ia, ib, ic</td><td>Sampled Values IEC 61850-9-2 (3 phases)</td></tr>
   <tr><td>OPC DA Read</td><td>v, q</td><td>Read via OpenOPC/DCOM</td></tr>
   <tr><td>InTouch Read</td><td>v, q</td><td>Read Wonderware InTouch</td></tr>
   <tr><td>WinCC Read</td><td>v, q</td><td>Read Siemens WinCC</td></tr>
 </table>
 
-<h3>Logика (9)</h3>
+<h3>Logand (9)</h3>
 <table>
   <tr><th>Block</th><th>Inputs &rarr; Outputs</th><th>Description</th></tr>
-  <tr><td>AND</td><td>a, b &rarr; q</td><td>Logическое И</td></tr>
-  <tr><td>OR</td><td>a, b &rarr; q</td><td>Logическое OR</td></tr>
-  <tr><td>NOT</td><td>a &rarr; q</td><td>Logическое НЕ</td></tr>
+  <tr><td>AND</td><td>a, b &rarr; q</td><td>Logandwith</td></tr>
+  <tr><td>OR</td><td>a, b &rarr; q</td><td>Logandwith OR</td></tr>
+  <tr><td>NOT</td><td>a &rarr; q</td><td>Logandwith</td></tr>
   <tr><td>XOR</td><td>a, b &rarr; q</td><td>Exclusive OR</td></tr>
-  <tr><td>Comparator</td><td>a, b &rarr; gt, eq, lt</td><td>Comparison: больше, равно, меньше</td></tr>
-  <tr><td>TON</td><td>en &rarr; q, et</td><td>Таймер delayи enablения</td></tr>
-  <tr><td>Counter</td><td>pu, rst &rarr; cv, q</td><td>Counter импульсов с пресетом</td></tr>
+  <tr><td>Comparator</td><td>a, b &rarr; gt, eq, lt</td><td>Comparison: more, equal, less</td></tr>
+  <tr><td>TON</td><td>en &rarr; q, et</td><td>Timer delayand enabland</td></tr>
+  <tr><td>Counter</td><td>pu, rst &rarr; cv, q</td><td>Counter andwithin with with</td></tr>
   <tr><td>MUX</td><td>a, b, sel &rarr; q</td><td>Multiplexer</td></tr>
-  <tr><td>SR</td><td>s, r &rarr; q</td><td>SR-триггер</td></tr>
+  <tr><td>SR</td><td>s, r &rarr; q</td><td>SR-trigger</td></tr>
 </table>
 
 <h3>Calculations (7)</h3>
 <table>
   <tr><th>Block</th><th>Inputs &rarr; Outputs</th><th>Description</th></tr>
-  <tr><td>Math. operatioя</td><td>a, b &rarr; r</td><td>+, &minus;, &times;, &divide;, pow, min, max</td></tr>
-  <tr><td>Scale</td><td>v &rarr; r</td><td>Linear scalирование диапазона</td></tr>
-  <tr><td>PID-регулятор</td><td>pv, sp &rarr; out, err</td><td>PID с Kp и ограничением выхода</td></tr>
-  <tr><td>Formula</td><td>x, y &rarr; r</td><td>Произвольная формула (sin, cos, sqrt, PI)</td></tr>
-  <tr><td>Фильтр</td><td>v &rarr; r</td><td>Экспоненциальный фильтр НЧ</td></tr>
-  <tr><td>RMS</td><td>v &rarr; r</td><td>Среднеквадратичное valueие</td></tr>
-  <tr><td>Limiter</td><td>v &rarr; r</td><td>Ограничение диапазона lo/hi</td></tr>
+  <tr><td>Math. operatio</td><td>a, b &rarr; r</td><td>+, &minus;, &times;, &divide;, pow, min, max</td></tr>
+  <tr><td>Scale</td><td>v &rarr; r</td><td>Linear scalandinand andon</td></tr>
+  <tr><td>PID-regulator</td><td>pv, sp &rarr; out, err</td><td>PID with Kp and andand output</td></tr>
+  <tr><td>Formula</td><td>x, y &rarr; r</td><td>Custom formula (sin, cos, sqrt, PI)</td></tr>
+  <tr><td>Filter</td><td>v &rarr; r</td><td>Exponential LPF</td></tr>
+  <tr><td>RMS</td><td>v &rarr; r</td><td>RMS valueand</td></tr>
+  <tr><td>Limiter</td><td>v &rarr; r</td><td>Range limiting lo/hi</td></tr>
 </table>
 
 <h3>Programs (5)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Скрипт</td><td>Произвольный JavaScript (i1, i2 &rarr; o1, o2)</td></tr>
-  <tr><td>SQL Write</td><td>Write valueия в журнал SQLite</td></tr>
-  <tr><td>SQL Read</td><td>Read afterднего valueия из трендов</td></tr>
-  <tr><td>Write в БД</td><td>Auto-classification: &gt;80=авария, &gt;60=предупреждение</td></tr>
+  <tr><td>Script</td><td>Custom JavaScript (i1, i2 &rarr; o1, o2)</td></tr>
+  <tr><td>SQL Write</td><td>Write valueand in log SQLite</td></tr>
+  <tr><td>SQL Read</td><td>Read afternot valueand and in</td></tr>
+  <tr><td>Write in DB</td><td>Auto-classification: &gt;80=inand, &gt;60=warning</td></tr>
   <tr><td>Auto-print</td><td>Automatic Report Printing</td></tr>
 </table>
 
 <h3>Outputs (10)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Analog / Discrete выход</td><td>Простой выход</td></tr>
-  <tr><td>OPC UA / Modbus / MMS Write</td><td>Write по protocolу</td></tr>
-  <tr><td>GOOSE Pub</td><td>Публикация GOOSE-eventя (d1, d2)</td></tr>
+  <tr><td>Analog / Discrete output</td><td>Simple output</td></tr>
+  <tr><td>OPC UA / Modbus / MMS Write</td><td>Write protocol</td></tr>
+  <tr><td>GOOSE Pub</td><td>Publishing GOOSE-event (d1, d2)</td></tr>
   <tr><td>OPC DA / InTouch / WinCC Write</td><td>Write via OPC DA</td></tr>
-  <tr><td>Sound alertие</td><td>WebAudio: alarm/warn/info/siren + свой URL</td></tr>
+  <tr><td>Sound alertand</td><td>WebAudio: alarm/warn/info/siren + within URL</td></tr>
 </table>
 
-<h3>Displays (10 &mdash; видны в Runtime)</h3>
+<h3>Displays (10 &mdash; inand in Runtime)</h3>
 <table>
   <tr><th>Block</th><th>Description</th></tr>
-  <tr><td>Analog Gauge</td><td>SVG 270&deg; дуга, авто-color по порогам</td></tr>
-  <tr><td>Numeric индикатор</td><td>Цифровое valueие с единицами</td></tr>
+  <tr><td>Analog Gauge</td><td>SVG 270&deg; arc, in-color</td></tr>
+  <tr><td>Numeric indicator</td><td>Digital valueand with andandand</td></tr>
   <tr><td>Bar Chart</td><td>Vertical bar with fill</td></tr>
-  <tr><td>Indicator</td><td>Circleлый, вкл/выкл по порогу</td></tr>
-  <tr><td>Тренд</td><td>3 channelа, курсор, архив, PNG, печать</td></tr>
-  <tr><td>Слайдер</td><td>Ползунок controlия оператором</td></tr>
+  <tr><td>Indicator</td><td>Circle, on/off</td></tr>
+  <tr><td>Trend</td><td>3 channel, cursor, archive, PNG, print</td></tr>
+  <tr><td>Slider</td><td>Slider controland</td></tr>
   <tr><td>Button</td><td>Toggle 0/1</td></tr>
-  <tr><td>Text</td><td>Подстаnewка valueий</td></tr>
-  <tr><td>Panel аварий</td><td>4 channelа с colorовой индикацией</td></tr>
-  <tr><td>Log</td><td>Последние eventя оператора</td></tr>
+  <tr><td>Text</td><td>withnew valueand</td></tr>
+  <tr><td>Panel inand</td><td>4 channel with colorin andandand</td></tr>
+  <tr><td>Log</td><td>Recent event</td></tr>
 </table>
 
 <!-- =================== SHAPES =================== -->
@@ -530,106 +526,106 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Equipment <span class="tag tag-green">33</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Pumps, задвижки, клапаны, двигатели, ЧРП, вентиляторы, компрессоры, нагреватели, охладители, теплообменники, фильтры, миксеры, конвейеры, мешалки, шиберы, шнеки, печи, факельная труба и other</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Pumps, gates, valves, motors, VFD, fans, compressors, heaters, coolers, heat exchangers, filters, mixers, conveyors, mixers, dampers, augers, furnaces, flareon and other</p>
   </div>
   <div class="card">
     <div class="card-title">Vessels <span class="tag tag-blue">10</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Tanks, цorндрические ёмкости, горизонтальные ёмкости, дренажные ёмкости, atямки, сепараторы, бункеры, колонны</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Tanks, orandwithand withand, horizontal vessels, drain vessels, atand, separators, hoppers, columns</p>
   </div>
   <div class="card">
-    <div class="card-title">Электроequipmentие <span class="tag tag-purple">5</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Switches, контакторы, трансformatоры, предохранители, заземление</p>
+    <div class="card-title">Electroequipmentand<span class="tag tag-purple">5</span></div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Switches, contactors, withformat, fuses, grounding</p>
   </div>
   <div class="card">
     <div class="card-title">Indicators <span class="tag tag-orange">7</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">LED (зелёный, красный, жёлтый), лампа, сирена, светофор, пламя/факел</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">LED (green, red, yellow), lamp, withandon, traffic light, flame/flare</p>
   </div>
 </div>
 
-<p><strong>Pipelines</strong> (5): труба Г, труба В, тройник, колено, редуктор.<br>
-<strong>Примитивы</strong> (5): линия, прямоangleьник, круг, текст, многоangleьник.</p>
+<p><strong>Pipelines</strong> (5): pipe L, pipe V, tee, elbow, reducer.<br>
+<strong>Primitives</strong>(5): line, directlyangleand, circle, text, manyangleand.</p>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#127912;</div>
-  <div>All graphic elements bind to signals &mdash; color и анимация меняются в Runtime по valueию переменной.</div>
+  <div>All graphic elements bind to signals &mdash; color and andand with in Runtime valueand .</div>
 </div>
 
 <!-- =================== WIRES =================== -->
-<h2 id="wires">Соединения (провода)</h2>
-<p>Соединения создаются кликом на <strong>выходной порт</strong> блока (справа), затем кликом на <strong>входной порт</strong> другого блока (слева). Провода рисуются как Bezier-кривые.</p>
+<h2 id="wires">Connections (wires)</h2>
+<p>Connections withwith click on<strong>output port</strong>block (right), click on<strong>input port</strong>block (left). Wires drawn as Bezier-andin.</p>
 <ul>
-  <li>Portы входов &mdash; слева блока</li>
-  <li>Portы выходов &mdash; справа блока</li>
-  <li>Deletion провода &mdash; выделить + <kbd>Delete</kbd></li>
+  <li>Port inputin &mdash; left block</li>
+  <li>Port outputin &mdash; right block</li>
+  <li>Deletion wires &mdash; select + <kbd>Delete</kbd></li>
 </ul>
 
 <!-- =================== PAGES =================== -->
 <h2 id="pages">Multi-page</h2>
-<p>Project may содержать mainую pageу и произвольное quantitо additionalых:</p>
+<p>Project may contain main page and andin quantit additional:</p>
 <ul>
-  <li>Button <strong>+</strong> в заголовке &mdash; добавить pageу</li>
-  <li>Tabs &mdash; switchие between pageами</li>
-  <li>Each pageа имеет свой set блоков и фигур</li>
+  <li>Button <strong>+</strong>in header &mdash; add page</li>
+  <li>Tabs &mdash; switchand between pageand</li>
+  <li>Each page and within set blockin and and</li>
 </ul>
 
 <!-- =================== POPUPS =================== -->
-<h2 id="popups">Popupы</h2>
-<p>Popupы &mdash; pageы, открывающиеся как модальные окна в Runtime at клике на equipmentие. Used для детального displayения параметров узла.</p>
+<h2 id="popups">Popup</h2>
+<p>Popup &mdash; page, inandwith on in Runtime at click on equipmentand. Used for displayand in .</p>
 
 <!-- =================== RUNTIME =================== -->
 <h2 id="runtime">Runtime Environment (Runtime)</h2>
 
-<p>Toggle: buttonа <strong>Runtime</strong> в заголовке.</p>
+<p>Toggle: button<strong>Runtime</strong> in header.</p>
 
 <div class="card">
   <div class="card-title">Features Runtime</div>
   <ul style="margin:0">
-    <li>Cycle updatия: <strong>50&ndash;1000 мс</strong> (по умолчанию 100 мс)</li>
-    <li>Отображаются only дисплеи и графика (logика hiddenа)</li>
+    <li>Cycle updatand:<strong>50&ndash;1000 with</strong>(by default 100 with)</li>
+    <li>Displayed only andwithand and and (logand hidden)</li>
     <li>Fullscreen Mode &mdash; <kbd>F11</kbd></li>
-    <li>Protection accessа к редактору logином/паролем</li>
-    <li>Auto-start Runtime at loadе (опция)</li>
-    <li>Log оператора с метками time</li>
-    <li>Control слайдерами и buttonами</li>
-    <li>Click по equipmentию &rarr; попап с деталями</li>
+    <li>Protection access logand/password</li>
+    <li>Auto-start Runtime at load (option)</li>
+    <li>Log with and time</li>
+    <li>Control withand and buttonand</li>
+    <li>Click equipmentand &rarr; with and</li>
   </ul>
 </div>
 
 <!-- =================== TRENDS =================== -->
-<h2 id="trends">Trends и архив</h2>
+<h2 id="trends">Trends and archive</h2>
 
-<p>Block <strong>Тренд</strong> поддерживает 3 channelа с настраиваемыми colorами и nameами. Real-time Buffer &mdash; 200 точек.</p>
+<p>Block <strong>Trend</strong>supports 3 channel with onwithandinand colorand and nameand. Real-time Buffer &mdash; 200 points.</p>
 
-<h4>View архива</h4>
+<h4>View archive</h4>
 <div class="steps">
-  <div class="step">Click <strong>подробнее</strong> на тренде</div>
+  <div class="step">Click <strong>details</strong>on</div>
   <div class="step">Select tag from dropdown list</div>
-  <div class="step">Click period: <strong>1ч, 2ч, 6ч, 12ч, 24ч</strong></div>
-  <div class="step">Сохраните в PNG or распечатайте</div>
+  <div class="step">Click period: <strong>1, 2, 6, 12, 24</strong></div>
+  <div class="step">Save to PNG or with</div>
 </div>
 
 <!-- =================== ALARMS =================== -->
 <h2 id="alarms">Sound Alerts</h2>
 
-<p>Block <strong>Sound alertие</strong> генерирует звук via WebAudio API:</p>
+<p>Block <strong>Sound alertand</strong>notand in via WebAudio API:</p>
 
 <table>
-  <tr><th>Type</th><th>Частота</th><th>Характер</th></tr>
-  <tr><td>Warning</td><td>660 Гц</td><td>Soft тон</td></tr>
-  <tr><td>Alarm</td><td>880/440 Гц</td><td>Резкий прерывистый</td></tr>
-  <tr><td>Information</td><td>520 Гц</td><td>Short щелчок</td></tr>
-  <tr><td>Сирена</td><td>600/900 Гц</td><td>Ascending/нисходящий вой</td></tr>
-  <tr><td>Свой звук</td><td>&mdash;</td><td>URL mp3/wav файла</td></tr>
+  <tr><th>Type</th><th>Frequency</th><th>Character</th></tr>
+  <tr><td>Warning</td><td>660</td><td>Soft tone</td></tr>
+  <tr><td>Alarm</td><td>880/440</td><td>Sharp intermittent</td></tr>
+  <tr><td>Information</td><td>520</td><td>Short click</td></tr>
+  <tr><td>Siren</td><td>600/900</td><td>Ascending/andwithand in</td></tr>
+  <tr><td>Custom sound</td><td>&mdash;</td><td>URL mp3/wav file</td></tr>
 </table>
 
 <!-- =================== PROTOCOLS =================== -->
-<h2 id="protocols">Overview protocolов (9)</h2>
+<h2 id="protocols">Overview protocolin (9)</h2>
 
 <table>
-  <tr><th>Protocol</th><th>Стандарт</th><th>Mode</th><th>Library</th></tr>
-  <tr><td>MMS</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
-  <tr><td>GOOSE</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
-  <tr><td>SV</td><td>IEC 61850-9-2</td><td>REAL / EMU</td><td>Эмуляция</td></tr>
+  <tr><th>Protocol</th><th>Standard</th><th>Mode</th><th>Library</th></tr>
+  <tr><td>MMS</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Emulation</td></tr>
+  <tr><td>GOOSE</td><td>IEC 61850-8-1</td><td>REAL / EMU</td><td>Emulation</td></tr>
+  <tr><td>SV</td><td>IEC 61850-9-2</td><td>REAL / EMU</td><td>Emulation</td></tr>
   <tr><td>OPC UA</td><td>IEC 62541</td><td>REAL / EMU</td><td>asyncua</td></tr>
   <tr><td>Modbus TCP</td><td>Standard</td><td>REAL / EMU</td><td>pymodbus</td></tr>
   <tr><td>OPC DA</td><td>DCOM</td><td>REAL / EMU</td><td>OpenOPC</td></tr>
@@ -644,110 +640,110 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 <div class="grid-3">
   <div class="card">
     <div class="card-title">MMS <span class="tag tag-green">:102</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Read/writь переменных IED. Control и мониторинг.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Read/writ variables IED. Control and andand.</p>
   </div>
   <div class="card">
     <div class="card-title">GOOSE <span class="tag tag-blue">multicast</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Fast event transfer (4 мс). Protective автоматика.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Fast event transfer (4 with). Protective inand.</p>
   </div>
   <div class="card">
     <div class="card-title">SV <span class="tag tag-purple">multicast</span></div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Instant valueия токов трёх фаз. Цифровые подстанции.</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Instant valueand in . Digital substations.</p>
   </div>
 </div>
 
 <!-- =================== OPCUA =================== -->
 <h2 id="opcua">OPC UA</h2>
-<p>OPC UA (IEC 62541) &mdash; универсальный access к данным. Gateway launchает сервер на <code>opc.tcp://hostname:4840</code>.</p>
-<p>Settings: SCADA &rarr; Settings &rarr; OPC UA &rarr; endpoint, порт, режим withoutопасности.</p>
+<p>OPC UA (IEC 62541) &mdash; andinwith access to data. Gateway launch server on<code>opc.tcp://hostname:4840</code>.</p>
+<p>Settings: SCADA &rarr; Settings &rarr; OPC UA &rarr; endpoint, port, mode withoutwithwithand.</p>
 
 <!-- =================== MODBUS =================== -->
 <h2 id="modbus">Modbus TCP</h2>
-<p>Стандартный industrialый protocol. Gateway: порт <code>502</code> (or <code>1502</code> если busy). Поддерживает functioи: FC 3 (Read Holding), FC 4 (Read Input), FC 6 (Write Single), FC 16 (Write Multiple).</p>
+<p>Standard industrial protocol. Gateway: port<code>502</code> (or <code>1502</code> if busy). Supports functioand: FC 3 (Read Holding), FC 4 (Read Input), FC 6 (Write Single), FC 16 (Write Multiple).</p>
 
 <!-- =================== OPCDA =================== -->
 <h2 id="opcda">OPC DA / InTouch / WinCC</h2>
-<p>OPC DA Classic via DCOM. Требуется Windows. Support Kepware, Wonderware InTouch (<code>Wonderware.InTouch.OPCServer</code>), Siemens WinCC (<code>OPCServer.WinCC</code>).</p>
+<p>OPC DA Classic via DCOM. Required Windows. Support Kepware, Wonderware InTouch (<code>Wonderware.InTouch.OPCServer</code>), Siemens WinCC (<code>OPCServer.WinCC</code>).</p>
 
 <!-- =================== GATEWAY =================== -->
 <h2 id="gateway">SCADA Gateway</h2>
 
-<p>Gateway &mdash; serverая часть системы. 12 параллельных потоков обработки protocolов.</p>
+<p>Gateway &mdash; server with system. 12 in and protocolin.</p>
 
 <div class="card">
-  <div class="card-title">Threadи Gateway</div>
+  <div class="card-title">Threadand Gateway</div>
   <table>
     <tr><th>Thread</th><th>Port</th><th>Assignment</th></tr>
     <tr><td>HTTP Dashboard</td><td>8088</td><td>Web Control Panel</td></tr>
-    <tr><td>WebSocket Bridge</td><td>8089</td><td>Связь со SCADA</td></tr>
-    <tr><td>OPC UA Server</td><td>4840</td><td>Эмуляция OPC UA</td></tr>
-    <tr><td>Modbus TCP Server</td><td>502</td><td>Modbus эмулятор</td></tr>
-    <tr><td>MMS Server</td><td>102</td><td>MMS эмулятор</td></tr>
+    <tr><td>WebSocket Bridge</td><td>8089</td><td>Communication with SCADA</td></tr>
+    <tr><td>OPC UA Server</td><td>4840</td><td>Emulation OPC UA</td></tr>
+    <tr><td>Modbus TCP Server</td><td>502</td><td>Modbus emulator</td></tr>
+    <tr><td>MMS Server</td><td>102</td><td>MMS emulator</td></tr>
     <tr><td>GOOSE Publisher</td><td>239.0.0.1:61850</td><td>Multicast GOOSE</td></tr>
     <tr><td>SV Publisher</td><td>239.0.0.2:61851</td><td>Multicast SV</td></tr>
     <tr><td>Emulator</td><td>&mdash;</td><td>Data Generation</td></tr>
-    <tr><td>OPC UA Client</td><td>&mdash;</td><td>Реальное equipmentие</td></tr>
-    <tr><td>Modbus Client</td><td>&mdash;</td><td>Реальные PLC</td></tr>
+    <tr><td>OPC UA Client</td><td>&mdash;</td><td>Real equipmentand</td></tr>
+    <tr><td>Modbus Client</td><td>&mdash;</td><td>Real PLC</td></tr>
     <tr><td>OPC DA Client</td><td>&mdash;</td><td>Kepware/InTouch/WinCC</td></tr>
-    <tr><td>SQL Engine</td><td>&mdash;</td><td>SQLite: журнал, тренды</td></tr>
+    <tr><td>SQL Engine</td><td>&mdash;</td><td>SQLite: log, trends</td></tr>
   </table>
 </div>
 
 <!-- =================== DASHBOARD =================== -->
-<h2 id="dashboard">Dashboard (6 вкладок)</h2>
+<h2 id="dashboard">Dashboard (6 on)</h2>
 
 <p>Access: <code>http://localhost:8088</code></p>
 
 <div class="grid-2">
   <div class="card">
     <div class="card-title">Status</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Cards 9 protocolов, EMU/REAL, operatioи R/W, подkeyённые проекты, верификация</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Cards 9 protocolin, EMU/REAL, operatioand R/W, underkeyed projects, inandandand</p>
   </div>
   <div class="card">
     <div class="card-title">Connection</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Addressа all endpoints: WebSocket, OPC UA, Modbus, MMS, REST API</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Address all endpoints: WebSocket, OPC UA, Modbus, MMS, REST API</p>
   </div>
   <div class="card">
     <div class="card-title">Database</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Скользящее window, макс. writей, статистика, clearка, afterдние 50 writей</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Sliding window, max. writ, withandwithand, clear, afterand 50 writ</p>
   </div>
   <div class="card">
     <div class="card-title">OPC Browser</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Tree OPC UA и OPC DA с currentими valueиями тегов</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Tree OPC UA and OPC DA with currentandand valueandand tagin</p>
   </div>
   <div class="card">
-    <div class="card-title">Пользователи</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">CRUD, 3 роли: Operator, Engineer, Admin. Пароли SHA256</p>
+    <div class="card-title">Users</div>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">CRUD, 3 roles: Operator, Engineer, Admin. Passwords SHA256</p>
   </div>
   <div class="card">
     <div class="card-title">Log</div>
-    <p style="font-size:13px;color:var(--text-sec);margin:0">Полный log eventй с colorовой индикацией уровней</p>
+    <p style="font-size:13px;color:var(--text-sec);margin:0">Full log event with colorin andandand innot</p>
   </div>
 </div>
 
 <!-- =================== DATABASE =================== -->
 <h2 id="database">Database (SQLite)</h2>
 
-<p>File: <code>scada_journal.db</code> (создаётся автоматически рядом с Gateway).</p>
+<p>File: <code>scada_journal.db</code>(withwith inandwithand with Gateway).</p>
 
 <table>
   <tr><th>Table</th><th>Assignment</th></tr>
-  <tr><td>journal</td><td>Log: time, источник, levelь, тег, valueие, сообщение</td></tr>
-  <tr><td>trends</td><td>Trends: time, тег, valueие (writь каждые 5 сек)</td></tr>
-  <tr><td>alarms</td><td>Alarms: startо, конец, тег, levelь, сообщение, квитирование</td></tr>
-  <tr><td>users</td><td>Пользователи: имя, роль, SHA256 пароль, date</td></tr>
+  <tr><td>journal</td><td>Log: time, source, level, tag, valueand, message</td></tr>
+  <tr><td>trends</td><td>Trends: time, tag, valueand (writ 5 sec)</td></tr>
+  <tr><td>alarms</td><td>Alarms: start, end, tag, level, message, acknowledgement</td></tr>
+  <tr><td>users</td><td>Users: and, role, SHA256 role, date</td></tr>
 </table>
 
-<p>Storage: скользящее window 30 дней, макс. 100 000 writей. Объём: ~2 МБ/сутки.</p>
+<p>Storage: with window 30 not, max. 100 000 writ. Volume: ~2 /days.</p>
 
 <!-- =================== USERS =================== -->
-<h2 id="users">Пользователи и роли</h2>
+<h2 id="users">Users and roles</h2>
 
 <table>
-  <tr><th>Role</th><th>Права</th></tr>
-  <tr><td><strong>Operator</strong></td><td>Runtime, просмотр</td></tr>
-  <tr><td><strong>Engineer</strong></td><td>+ Editor, settingи</td></tr>
-  <tr><td><strong>Admin</strong></td><td>+ Пользователи, база данных</td></tr>
+  <tr><th>Role</th><th>Rights</th></tr>
+  <tr><td><strong>Operator</strong></td><td>Runtime, view</td></tr>
+  <tr><td><strong>Engineer</strong></td><td>+ Editor, settingand</td></tr>
+  <tr><td><strong>Admin</strong></td><td>+ Users, database</td></tr>
 </table>
 
 <!-- =================== API =================== -->
@@ -755,127 +751,127 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
 
 <table>
   <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
-  <tr><td>GET</td><td><code>/api</code></td><td>Status protocolов</td></tr>
-  <tr><td>GET</td><td><code>/api/db/stats</code></td><td>Статистика БД</td></tr>
-  <tr><td>GET</td><td><code>/api/db/last</code></td><td>Последние 50 writей</td></tr>
-  <tr><td>GET</td><td><code>/api/users</code></td><td>List userей</td></tr>
-  <tr><td>GET</td><td><code>/api/opc/browse</code></td><td>Overview OPC тегов</td></tr>
-  <tr><td>GET</td><td><code>/api/trends/history</code></td><td>Historical тренды</td></tr>
-  <tr><td>GET</td><td><code>/api/trends/tags</code></td><td>Accessные теги</td></tr>
+  <tr><td>GET</td><td><code>/api</code></td><td>Status protocolin</td></tr>
+  <tr><td>GET</td><td><code>/api/db/stats</code></td><td>DB statistics</td></tr>
+  <tr><td>GET</td><td><code>/api/db/last</code></td><td>Recent 50 writ</td></tr>
+  <tr><td>GET</td><td><code>/api/users</code></td><td>List user</td></tr>
+  <tr><td>GET</td><td><code>/api/opc/browse</code></td><td>Overview OPC tagin</td></tr>
+  <tr><td>GET</td><td><code>/api/trends/history</code></td><td>Historical trends</td></tr>
+  <tr><td>GET</td><td><code>/api/trends/tags</code></td><td>Access tagand</td></tr>
   <tr><td>POST</td><td><code>/api/emu/toggle</code></td><td>EMU ON/OFF</td></tr>
-  <tr><td>POST</td><td><code>/api/config</code></td><td>Configuration от SCADA</td></tr>
-  <tr><td>POST</td><td><code>/api/db/clear</code></td><td>Очистка БД</td></tr>
-  <tr><td>POST</td><td><code>/api/db/cleanup</code></td><td>Deletion старых writей</td></tr>
-  <tr><td>POST</td><td><code>/api/db/config</code></td><td>Settings хранения</td></tr>
-  <tr><td>POST</td><td><code>/api/users/add</code></td><td>Add userя</td></tr>
-  <tr><td>POST</td><td><code>/api/users/delete</code></td><td>Delete userя</td></tr>
-  <tr><td>POST</td><td><code>/api/log/clear</code></td><td>Очистка журнала</td></tr>
+  <tr><td>POST</td><td><code>/api/config</code></td><td>Configuration SCADA</td></tr>
+  <tr><td>POST</td><td><code>/api/db/clear</code></td><td>DB cleanup</td></tr>
+  <tr><td>POST</td><td><code>/api/db/cleanup</code></td><td>Deletion with writ</td></tr>
+  <tr><td>POST</td><td><code>/api/db/config</code></td><td>Settings notand</td></tr>
+  <tr><td>POST</td><td><code>/api/users/add</code></td><td>Add user</td></tr>
+  <tr><td>POST</td><td><code>/api/users/delete</code></td><td>Delete user</td></tr>
+  <tr><td>POST</td><td><code>/api/log/clear</code></td><td>Log cleanup</td></tr>
 </table>
 
 <!-- =================== PROJECTS =================== -->
-<h2 id="projects">Projectы</h2>
+<h2 id="projects">Project</h2>
 
 <table>
   <tr><th>Action</th><th>How</th></tr>
-  <tr><td>Save</td><td>&#128190; &rarr; ввести имя &rarr; localStorage</td></tr>
-  <tr><td>Load</td><td>&#128194; &rarr; выбрать проект</td></tr>
-  <tr><td>Export</td><td>&#10515; &rarr; скачать JSON</td></tr>
-  <tr><td>Import</td><td>&#128194; &rarr; Import &rarr; выбрать JSON</td></tr>
+  <tr><td>Save</td><td>&#128190; &rarr; ininwithand and &rarr; localStorage</td></tr>
+  <tr><td>Load</td><td>&#128194; &rarr; select</td></tr>
+  <tr><td>Export</td><td>&#10515; &rarr; download JSON</td></tr>
+  <tr><td>Import</td><td>&#128194; &rarr; Import &rarr; select JSON</td></tr>
 </table>
 
-<p>Format: JSON, enablает блоки, фигуры, провода, settingи, pageы.</p>
+<p>Format: JSON, enabl blockand, shapes, wires, settingand, page.</p>
 
 <!-- =================== SETTINGS =================== -->
-<h2 id="settings">Settings (9 вкладок)</h2>
+<h2 id="settings">Settings (9 on)</h2>
 
-<p>SCADA &rarr; buttonа <strong>Settings</strong> в заголовке:</p>
+<p>SCADA &rarr; button<strong>Settings</strong> in header:</p>
 
 <table>
-  <tr><th>Tab</th><th>Parameterы</th></tr>
-  <tr><td>Main</td><td>Cycle (мс), автоlaunch, full экран, logин/пароль</td></tr>
-  <tr><td>OPC UA</td><td>Endpoint, порт, withoutопасность</td></tr>
-  <tr><td>OPC DA</td><td>DCOM сервер, ProgID</td></tr>
-  <tr><td>Modbus</td><td>TCP порт, таймаут</td></tr>
-  <tr><td>MMS</td><td>Port, версия, TSEL, TLS</td></tr>
+  <tr><th>Tab</th><th>Parameter</th></tr>
+  <tr><td>Main</td><td>Cycle (with), inlaunch, full screen, logand/role</td></tr>
+  <tr><td>OPC UA</td><td>Endpoint, port, withoutwithwith</td></tr>
+  <tr><td>OPC DA</td><td>DCOM server, ProgID</td></tr>
+  <tr><td>Modbus</td><td>TCP port, timeout</td></tr>
+  <tr><td>MMS</td><td>Port, version, TSEL, TLS</td></tr>
   <tr><td>GOOSE</td><td>AppID, VLAN, interface</td></tr>
-  <tr><td>SV</td><td>Interface, frequencа дискретизации</td></tr>
+  <tr><td>SV</td><td>Interface, frequenc andwithandandand</td></tr>
   <tr><td>InTouch</td><td>Server, Access Name</td></tr>
   <tr><td>WinCC</td><td>Server, Connection</td></tr>
 </table>
 
 <!-- =================== REAL-HW =================== -->
-<h2 id="real-hw">Connection к realому equipmentию</h2>
+<h2 id="real-hw">Connection real equipmentand</h2>
 
 <div class="steps">
-  <div class="step">В SCADA &rarr; <strong>Settings</strong> &rarr; вкладка needго protocolа &rarr; укажите адрес equipmentия</div>
-  <div class="step">В Dashboard Gateway &rarr; <strong>Status</strong> &rarr; нажмите <strong>EMU OFF</strong></div>
-  <div class="step">Gateway автоматически подkeyится. In status: <strong>REAL</strong> вместо <strong>EMU</strong></div>
+  <div class="step">SCADA &rarr;<strong>Settings</strong>&rarr; on need protocol &rarr; and with equipmentand</div>
+  <div class="step">Dashboard Gateway &rarr;<strong>Status</strong> &rarr; click <strong>EMU OFF</strong></div>
+  <div class="step">Gateway inandwithand underkeyandwith. In status:<strong>REAL</strong> instead <strong>EMU</strong></div>
 </div>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>Gateway автоматически определяет устаnewленные библиотеки (<code>asyncua</code>, <code>pymodbus</code>, <code>OpenOPC</code>) at launchе.</div>
+  <div>Gateway inandwithand withnew andandand (<code>asyncua</code>, <code>pymodbus</code>, <code>OpenOPC</code>) at launch.</div>
 </div>
 
 <!-- =================== BACKUP =================== -->
-<h2 id="backup">Reserveное копирование</h2>
+<h2 id="backup">Reserve andinand</h2>
 
 <table>
-  <tr><th>Data</th><th>Storage</th><th>Reserveная копия</th></tr>
-  <tr><td>Projectы SCADA</td><td>localStorage браузера</td><td>Export в JSON</td></tr>
-  <tr><td>Trends и журнал</td><td><code>scada_journal.db</code></td><td>Copy файл</td></tr>
-  <tr><td>Settings Gateway</td><td><code>scada_gateway.json</code></td><td>Copy файл</td></tr>
+  <tr><th>Data</th><th>Storage</th><th>Reserveon and</th></tr>
+  <tr><td>Project SCADA</td><td>localStorage browser</td><td>Export in JSON</td></tr>
+  <tr><td>Trends and log</td><td><code>scada_journal.db</code></td><td>Copy file</td></tr>
+  <tr><td>Settings Gateway</td><td><code>scada_gateway.json</code></td><td>Copy file</td></tr>
 </table>
 
 <!-- =================== TROUBLESHOOT =================== -->
-<h2 id="troubleshoot">Устранение неполадок</h2>
+<h2 id="troubleshoot">Troubleshooting</h2>
 
 <div class="card" style="border-left: 3px solid var(--accent-orange);">
-  <div class="card-title">SCADA не подkeyается к Gateway</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Проверьте что <code>SCADA_Gateway.exe</code> запущен (lineа <code>All servers running!</code>). Убедитесь что порт 8089 не блокируется антивирусом.</p>
+  <div class="card-title">SCADA not underkeywith Gateway</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Check<code>SCADA_Gateway.exe</code>running (line<code>All servers running!</code>). Make sure port 8089 not blockandwith andinandwith.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-blue);">
   <div class="card-title">Gateway: &laquo;asyncua not found&raquo;</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Нормальная ситуация для автономной поставки. Gateway operationет в режиме эмуляции &mdash; все данные генерируются встроенным эмулятором.</p>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Normal for standalone delivery. Gateway operation in mode andand &mdash; inwith notandwith inwith emulator.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-orange);">
-  <div class="card-title">Instruments в Runtime не показывают valueий</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">Проверьте наличие зелёной pointи <strong>GW</strong> в заголовке. If отсутствует &mdash; Gateway не подkeyён. Click Runtime повторно after launchа Gateway.</p>
+  <div class="card-title">Instruments in Runtime not shown valueand</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">Check onandand pointand<strong>GW</strong>in header. If missing &mdash; Gateway not underkey. Click Runtime again after launch Gateway.</p>
 </div>
 
 <div class="card" style="border-left: 3px solid var(--accent-blue);">
-  <div class="card-title">Project не сохраняется</div>
-  <p style="font-size:13px;color:var(--text-sec);margin:0">localStorage переfullен. Удалите неиспользуемые проекты or экспортируйте в JSON.</p>
+  <div class="card-title">Project not saved</div>
+  <p style="font-size:13px;color:var(--text-sec);margin:0">localStorage full. Remove unused projects or withportand in JSON.</p>
 </div>
 
 <!-- =================== SECURITY =================== -->
 <h2 id="security">Security</h2>
 
 <ul>
-  <li><strong>Trial-режим:</strong> 2 часа работы с anti-tamper защитой</li>
-  <li><strong>Целостность:</strong> SHA256 хэш JSX-кода, checkа at loadе</li>
-  <li><strong>Base64:</strong> исходный код закодирован внутри HTML</li>
-  <li><strong>Protection редактора:</strong> logин/пароль в settingах</li>
-  <li><strong>Роли:</strong> Operator / Engineer / Admin</li>
-  <li><strong>Пароли:</strong> SHA256 хэш в SQLite</li>
+  <li><strong>Trial-mode:</strong>2 with operation with anti-tamper and</li>
+  <li><strong>Integrity:</strong>SHA256 hash JSX-code, check at load</li>
+  <li><strong>Base64:</strong>andwith andin inand HTML</li>
+  <li><strong>Protection :</strong>logand/role in setting</li>
+  <li><strong>Roles:</strong> Operator / Engineer / Admin</li>
+  <li><strong>Passwords:</strong> SHA256 hash in SQLite</li>
 </ul>
 
 <!-- =================== LICENSE =================== -->
 <h2 id="license">Licensing</h2>
 
-<p>Built-in licensing without activation servers. Each сборка содержит:</p>
+<p>Built-in licensing without activation servers. Each build withand:</p>
 
 <ul>
-  <li><strong>Build ID</strong> &mdash; 16-symbolьный SHA256 хэш</li>
-  <li><strong>License Key</strong> &mdash; 4 группы по 8 symbolов (MD5)</li>
-  <li><strong>Integrity Hash</strong> &mdash; SHA256 контрольная сумма</li>
+  <li><strong>Build ID</strong>&mdash; 16-symbol SHA256 hash</li>
+  <li><strong>License Key</strong>&mdash; 4 8 symbolin (MD5)</li>
+  <li><strong>Integrity Hash</strong>&mdash; SHA256 roleon with</li>
 </ul>
 
 <div class="callout callout-info">
   <div class="callout-icon">&#128204;</div>
-  <div>For atобретения licensи обращайтесь: <a href="mailto:scada@atwai.ru">scada@atwai.ru</a></div>
+  <div>For atand licensand with:<a href="mailto:scada@atwai.ru">scada@atwai.ru</a></div>
 </div>
 
 <!-- =================== CONTACTS =================== -->
@@ -887,15 +883,13 @@ Win+R &rarr; <span class="str">shell:startup</span> &rarr; Enter
     <p style="margin:0"><a href="mailto:scada@atwai.ru">scada@atwai.ru</a></p>
   </div>
   <div class="card">
-    <div class="card-title">Телефон</div>
+    <div class="card-title">Phone</div>
     <p style="margin:0"><a href="tel:+74951084804">+7 (495) 108-48-04</a></p>
   </div>
 </div>
 
 <p style="margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-dim)">
-  &copy; 2026 BitSCADA &mdash; ATW Technologies. All rights reserved.<br>
-  Подана заявка на registerацию в Registry Russian ПО (MinDigit).
-</p>
+  &copy; 2026 BitSCADA &mdash; ATW Technologies. All rights reserved.<br>Applied for registerand in Registry Russian (MinDigit).</p>
 
 </div>
 
