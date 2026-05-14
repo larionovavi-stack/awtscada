@@ -120,7 +120,7 @@
   --bg-secondary: #0b1120;
   --bg-card: #0f1729;
   --bg-card-hover: #141e33;
-  --accent: #00e8a8;
+  --accent: #2dd4a0;
   --accent-blue: #4da6ff;
   --accent-orange: #ff6b35;
   --accent-purple: #b070ff;
@@ -161,21 +161,10 @@ nav.scrolled { background: rgba(6, 10, 18, 0.95); box-shadow: 0 4px 30px rgba(0,
 }
 .nav-logo .logo-text {
   position: relative; display: inline-block;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 60%, var(--accent-purple) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  color: var(--accent);
 }
-.nav-logo .logo-text::after {
-  content: ''; position: absolute; inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 232, 168, 0.06) 2px,
-    rgba(0, 232, 168, 0.06) 4px
-  );
-  pointer-events: none; animation: scanlines 3s linear infinite;
-}
-@keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(4px); } }
+
+ 100% { transform: translateY(4px); } }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a {
   color: var(--text-secondary); text-decoration: none; font-size: 14px;
@@ -189,11 +178,11 @@ nav.scrolled { background: rgba(6, 10, 18, 0.95); box-shadow: 0 4px 30px rgba(0,
 .nav-links a:hover::after { width: 100%; }
 .nav-cta {
   padding: 8px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
-  background: linear-gradient(135deg, var(--accent), #00c492);
+  background: var(--accent);
   color: #060a12; text-decoration: none; transition: all 0.3s;
   border: none; cursor: pointer;
 }
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 232, 168, 0.3); }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(45, 212, 160, 0.15); }
 
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .burger span { display: block; width: 24px; height: 2px; background: var(--text-secondary); transition: all 0.3s; }
@@ -234,9 +223,7 @@ nav.scrolled { background: rgba(6, 10, 18, 0.95); box-shadow: 0 4px 30px rgba(0,
   letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 24px;
 }
 .hero h1 .gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-secondary);
@@ -249,20 +236,18 @@ nav.scrolled { background: rgba(6, 10, 18, 0.95); box-shadow: 0 4px 30px rgba(0,
 .hero-stat { text-align: center; }
 .hero-stat-num {
   font-size: 2.5rem; font-weight: 900; font-family: 'JetBrains Mono', monospace;
-  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .hero-stat-label { font-size: 13px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
 
 .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
   padding: 14px 36px; border-radius: 10px; font-size: 15px; font-weight: 700;
-  background: linear-gradient(135deg, var(--accent), #00c492);
+  background: var(--accent);
   color: #060a12; text-decoration: none; border: none; cursor: pointer;
   transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 232, 168, 0.35); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(45, 212, 160, 0.2); }
 .btn-secondary {
   padding: 14px 36px; border-radius: 10px; font-size: 15px; font-weight: 600;
   background: transparent; color: var(--text-primary); text-decoration: none;
