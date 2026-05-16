@@ -1,5 +1,8 @@
 # BitSCADA IEC 61850 — Industrial SCADA in a Single HTML File
 
+> **If you find this project useful, please give it a star!** It helps others discover BitSCADA.
+
+[![Stars](https://img.shields.io/github/stars/larionovavi-stack/bitscada?style=for-the-badge&color=gold)](https://github.com/larionovavi-stack/bitscada/stargazers)
 [![Demo](https://img.shields.io/badge/Live-Demo-00e8a8?style=for-the-badge)](https://larionovavi-stack.github.io/bitscada/)
 [![Download](https://img.shields.io/badge/Download-Demo-4da6ff?style=for-the-badge)](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/BitSCADA_Demo_EN.zip)
 [![Buy Source](https://img.shields.io/badge/Buy_Source-$15,000-ff6b35?style=for-the-badge)](https://avlarion.gumroad.com/l/mcmeyl)
