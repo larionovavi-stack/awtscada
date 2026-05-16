@@ -111,7 +111,7 @@ Includes: complete source code (JSX + Python), build system, English + Russian v
 
 ---
 
-**© 2026 ATW Technologies | [Website](https://larionovavi-stack.github.io/bitscada/) | [Contact](mailto:scada@atwai.ru)**
+**© 2026 ATW Technologies | [Website](https://larionovavi-stack.github.io/bitscada/) | [Contact](mailto:expert.asutp@gmail.com)**
 
 ### Tags
 
