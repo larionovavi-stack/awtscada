@@ -1,17 +1,17 @@
-# BitSCADA IEC 61850 — Industrial SCADA in a Single HTML File
+# awtSCADA IEC 61850 — Industrial SCADA in a Single HTML File
 
-> **If you find this project useful, please give it a star!** It helps others discover BitSCADA.
+> **If you find this project useful, please give it a star!** It helps others discover awtSCADA.
 
 [![Stars](https://img.shields.io/github/stars/larionovavi-stack/bitscada?style=for-the-badge&color=gold)](https://github.com/larionovavi-stack/bitscada/stargazers)
 [![Demo](https://img.shields.io/badge/Live-Demo-00e8a8?style=for-the-badge)](https://larionovavi-stack.github.io/bitscada/)
-[![Download](https://img.shields.io/badge/Download-Demo-4da6ff?style=for-the-badge)](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/BitSCADA_Demo_EN.zip)
+[![Download](https://img.shields.io/badge/Download-Demo-4da6ff?style=for-the-badge)](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip)
 [![Buy Source](https://img.shields.io/badge/Buy_Source-$15,000-ff6b35?style=for-the-badge)](https://avlarion.gumroad.com/l/mcmeyl)
 
-![BitSCADA Overview](img/overview.png)
+![awtSCADA Overview](img/overview.png)
 
 ## The only SCADA system in the world that runs from a single HTML file.
 
-**BitSCADA** is a complete industrial SCADA/HMI system that runs entirely in a web browser. No installation, no server — just open the file and start working.
+**awtSCADA** is a complete industrial SCADA/HMI system that runs entirely in a web browser. No installation, no server — just open the file and start working.
 
 ### Key Features
 
@@ -42,7 +42,7 @@ Browser Tabs:     8
 
 ### Quick Start
 
-1. [Download Demo](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/BitSCADA_Demo_EN.zip) (20 MB)
+1. [Download Demo](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip) (20 MB)
 2. Extract and open `SCADA_IEC61850_v8.html` in your browser
 3. Demo project loads automatically with built-in emulator
 4. To connect real equipment — run `SCADA_Gateway` for your OS
@@ -91,7 +91,7 @@ Browser Tabs:     8
 
 ```
 Browser (Chrome/Firefox/Edge/Safari)
-    └── BitSCADA HTML file
+    └── awtSCADA HTML file
             ├── Graphic Editor (drag & drop)
             ├── Runtime (fullscreen, alarms, trends)
             ├── Function Block Engine (53 blocks)

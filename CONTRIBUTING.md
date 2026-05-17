@@ -1,6 +1,6 @@
-# Contributing to BitSCADA
+# Contributing to awtSCADA
 
-Thank you for your interest in contributing to BitSCADA!
+Thank you for your interest in contributing to awtSCADA!
 
 ## How to Contribute
 
