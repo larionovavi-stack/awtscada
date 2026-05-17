@@ -5,11 +5,11 @@ Thank you for your interest in contributing to awtSCADA!
 ## How to Contribute
 
 ### Reporting Bugs
-- Use [GitHub Issues](https://github.com/larionovavi-stack/bitscada/issues)
+- Use [GitHub Issues](https://github.com/larionovavi-stack/awtscada/issues)
 - Include browser version, OS, and steps to reproduce
 
 ### Feature Requests
-- Open a [Discussion](https://github.com/larionovavi-stack/bitscada/discussions)
+- Open a [Discussion](https://github.com/larionovavi-stack/awtscada/discussions)
 - Describe the use case and expected behavior
 
 ### Protocol Requests
@@ -31,4 +31,4 @@ For the demo version, you can contribute:
 ## Contact
 
 - Email: expert.asutp@gmail.com
-- GitHub Discussions: https://github.com/larionovavi-stack/bitscada/discussions
+- GitHub Discussions: https://github.com/larionovavi-stack/awtscada/discussions

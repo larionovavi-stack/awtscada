@@ -2,9 +2,9 @@
 
 > **If you find this project useful, please give it a star!** It helps others discover awtSCADA.
 
-[![Stars](https://img.shields.io/github/stars/larionovavi-stack/bitscada?style=for-the-badge&color=gold)](https://github.com/larionovavi-stack/bitscada/stargazers)
-[![Demo](https://img.shields.io/badge/Live-Demo-00e8a8?style=for-the-badge)](https://larionovavi-stack.github.io/bitscada/)
-[![Download](https://img.shields.io/badge/Download-Demo-4da6ff?style=for-the-badge)](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip)
+[![Stars](https://img.shields.io/github/stars/larionovavi-stack/awtscada?style=for-the-badge&color=gold)](https://github.com/larionovavi-stack/awtscada/stargazers)
+[![Demo](https://img.shields.io/badge/Live-Demo-00e8a8?style=for-the-badge)](https://larionovavi-stack.github.io/awtscada/)
+[![Download](https://img.shields.io/badge/Download-Demo-4da6ff?style=for-the-badge)](https://github.com/larionovavi-stack/awtscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip)
 [![Buy Source](https://img.shields.io/badge/Buy_Source-$15,000-ff6b35?style=for-the-badge)](https://avlarion.gumroad.com/l/mcmeyl)
 
 ![awtSCADA Overview](img/overview.png)
@@ -42,7 +42,7 @@ Browser Tabs:     8
 
 ### Quick Start
 
-1. [Download Demo](https://github.com/larionovavi-stack/bitscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip) (20 MB)
+1. [Download Demo](https://github.com/larionovavi-stack/awtscada/releases/download/v1.0-en/awtSCADA_Demo_EN.zip) (20 MB)
 2. Extract and open `SCADA_IEC61850_v8.html` in your browser
 3. Demo project loads automatically with built-in emulator
 4. To connect real equipment — run `SCADA_Gateway` for your OS
@@ -85,7 +85,7 @@ Browser Tabs:     8
 
 ### Documentation
 
-📖 [Full Documentation](https://larionovavi-stack.github.io/bitscada/docs/)
+📖 [Full Documentation](https://larionovavi-stack.github.io/awtscada/docs/)
 
 ### Architecture
 
@@ -111,7 +111,7 @@ Includes: complete source code (JSX + Python), build system, English + Russian v
 
 ---
 
-**© 2026 ATW Technologies | [Website](https://larionovavi-stack.github.io/bitscada/) | [Contact](mailto:expert.asutp@gmail.com)**
+**© 2026 ATW Technologies | [Website](https://larionovavi-stack.github.io/awtscada/) | [Contact](mailto:expert.asutp@gmail.com)**
 
 ### Tags
 

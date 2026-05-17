@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://larionovavi-stack.github.io/bitscada/sitemap.xml
+Sitemap: https://larionovavi-stack.github.io/awtscada/sitemap.xml
