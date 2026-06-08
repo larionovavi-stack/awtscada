@@ -1,6 +1,6 @@
-# Contributing to atwSCADA
+# Contributing to awtSCADA
 
-Thank you for your interest in contributing to atwSCADA!
+Thank you for your interest in contributing to awtSCADA!
 
 ## How to Contribute
 
